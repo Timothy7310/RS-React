@@ -2,19 +2,21 @@ import React from 'react';
 import rssLogo from '../assets/img/rss-logo.svg';
 import '../styles/footer.scss';
 
-const Footer = () => {
-  return (
-    <footer className="footer">
-      <div className="footer__wrap container">
-        <div className="footer__info">
-          <span className="footer__info-year">Year of creation: 2023</span>
+class Footer extends React.Component {
+  render() {
+    return (
+      <footer className="footer">
+        <div className="footer__wrap container">
+          <div className="footer__info">
+            <span className="footer__info-year">Year of creation: 2023</span>
+          </div>
+          <a href="https://rs.school/js/" className="footer__rss">
+            <img src={rssLogo} alt="" />
+          </a>
         </div>
-        <a href="https://rs.school/js/" className="footer__rss">
-          <img src={rssLogo} alt="" />
-        </a>
-      </div>
-    </footer>
-  );
-};
+      </footer>
+    );
+  }
+}
 
 export default Footer;

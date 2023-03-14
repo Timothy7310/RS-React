@@ -1,3 +1,4 @@
+import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import AboutUsPage from './pages/AboutUsPage';
 import MainPage from './pages/MainPage';
@@ -9,18 +10,20 @@ import './styles/vendor.scss';
 import './styles/vars.scss';
 import './styles/settings.scss';
 
-function App() {
-  return (
-    <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<MainPage />} />
-          <Route path="about" element={<AboutUsPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
-    </>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<MainPage />} />
+            <Route path="about" element={<AboutUsPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </>
+    );
+  }
 }
 
 export default App;
