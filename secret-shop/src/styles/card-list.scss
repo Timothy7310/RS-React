@@ -1,0 +1,8 @@
+.goods-cards__list {
+    display: grid;
+    row-gap: 35px;
+    column-gap: 25px;
+    &--4{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
