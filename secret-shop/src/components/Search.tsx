@@ -1,11 +1,6 @@
 import React from 'react';
 import '../styles/search.scss';
-
-type SearchState = {
-  value: string;
-};
-
-type SearchProps = Record<string, never>;
+import { SearchProps, SearchState } from 'types/types';
 
 class Search extends React.Component<SearchProps, SearchState> {
   constructor(props: SearchProps) {

@@ -1,12 +1,8 @@
 import React from 'react';
 import CardItem from './CardItem';
-import { Cards } from 'types/types';
+import { CardListProps } from 'types/types';
 import '../styles/card-list.scss';
 import Search from './Search';
-
-type CardListProps = {
-  cards: Cards;
-};
 
 class CardList extends React.Component<CardListProps> {
   render() {

@@ -1,10 +1,6 @@
 import React from 'react';
-import { Card } from 'types/types';
+import { CardProps } from 'types/types';
 import '../styles/card.scss';
-
-type CardProps = {
-  card: Card;
-};
 
 class CardItem extends React.Component<CardProps> {
   render() {

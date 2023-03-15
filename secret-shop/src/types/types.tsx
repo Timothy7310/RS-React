@@ -16,4 +16,20 @@ type Card = {
 
 type Cards = Card[];
 
-export type { Card, Cards };
+type CardProps = {
+  card: Card;
+};
+
+type CardListProps = {
+  cards: Cards;
+};
+
+type SearchState = {
+  value: string;
+};
+
+type SearchProps = {
+  [key: string]: never;
+};
+
+export type { Card, Cards, CardProps, CardListProps, SearchState, SearchProps };
