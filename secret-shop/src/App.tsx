@@ -16,9 +16,9 @@ class App extends React.Component {
       <>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<MainPage />} />
-            <Route path="about" element={<AboutUsPage />} />
-            <Route path="*" element={<NotFoundPage />} />
+            <Route index element={<MainPage page={'Main'} />} />
+            <Route path="about" element={<AboutUsPage page={'About'} />} />
+            <Route path="*" element={<NotFoundPage page={'404'} />} />
           </Route>
         </Routes>
       </>

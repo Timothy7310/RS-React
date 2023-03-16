@@ -32,4 +32,8 @@ type SearchProps = {
   [key: string]: never;
 };
 
-export type { Card, Cards, CardProps, CardListProps, SearchState, SearchProps };
+type CurrentPageProps = {
+  page: string;
+};
+
+export type { Card, Cards, CardProps, CardListProps, SearchState, SearchProps, CurrentPageProps };

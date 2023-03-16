@@ -2,8 +2,14 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/img/logo.png';
 import '../styles/header.scss';
+import CurrentPage from './CurrentPage';
+import { CurrentPageProps } from '../types/types';
 
-class Header extends React.Component {
+class Header extends React.Component<CurrentPageProps> {
+  constructor(props: CurrentPageProps) {
+    super(props);
+  }
+
   render() {
     return (
       <header className="header">
@@ -12,6 +18,7 @@ class Header extends React.Component {
             <img src={logo} className="header__logo-icon" alt="" />
             <h1 className="header__logo-text">Secret Shop</h1>
           </NavLink>
+          <CurrentPage page={this.props.page} />
           <nav className="header__nav">
             <NavLink to="/" className={({ isActive }) => this.getActiveClass(isActive)}>
               Home

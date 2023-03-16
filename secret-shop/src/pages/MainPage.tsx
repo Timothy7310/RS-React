@@ -2,15 +2,25 @@ import React from 'react';
 import goods from '../assets/goods.json';
 import CardList from '../components/CardList';
 import '../styles/goods.scss';
+import Header from '../components/Header';
+import { CurrentPageProps } from '../types/types';
 
-class MainPage extends React.Component {
+class MainPage extends React.Component<CurrentPageProps> {
+  constructor(props: CurrentPageProps) {
+    super(props);
+  }
   render() {
     return (
-      <div className="goods">
-        <div className="goods__wrap container">
-          <CardList cards={goods} />
-        </div>
-      </div>
+      <>
+        <Header page={this.props.page} />
+        <main>
+          <div className="goods">
+            <div className="goods__wrap container">
+              <CardList cards={goods} />
+            </div>
+          </div>
+        </main>
+      </>
     );
   }
 }
