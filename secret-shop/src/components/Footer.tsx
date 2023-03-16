@@ -1,6 +1,6 @@
 import React from 'react';
 import rssLogo from '../assets/img/rss-logo.svg';
-import '../styles/footer.scss';
+import '../styles/blocks/footer.scss';
 
 class Footer extends React.Component {
   render() {

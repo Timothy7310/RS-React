@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/img/logo.png';
-import '../styles/header.scss';
+import '../styles/blocks/header.scss';
 import CurrentPage from './CurrentPage';
 import { CurrentPageProps } from '../types/types';
 

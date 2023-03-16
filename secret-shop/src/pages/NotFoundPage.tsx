@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/error.scss';
+import '../styles/blocks/error.scss';
 import Header from '../components/Header';
 import { CurrentPageProps } from '../types/types';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardProps } from 'types/types';
-import '../styles/card.scss';
+import '../styles/blocks/card.scss';
 
 class CardItem extends React.Component<CardProps> {
   render() {

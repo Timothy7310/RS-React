@@ -1,7 +1,7 @@
 import React from 'react';
 import goods from '../assets/goods.json';
 import CardList from '../components/CardList';
-import '../styles/goods.scss';
+import '../styles/blocks/goods.scss';
 import Header from '../components/Header';
 import { CurrentPageProps } from '../types/types';
 
