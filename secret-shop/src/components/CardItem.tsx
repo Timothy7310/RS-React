@@ -7,7 +7,8 @@ class CardItem extends React.Component<CardProps> {
     return (
       <li
         className="goods-cards__item card"
-        style={{ backgroundImage: `url(${this.props.card.img1})` }}
+        data-testid={this.props.card['item-name']}
+        style={{ backgroundImage: `url(${this.props.card.img1 || this.props.card.img2})` }}
       >
         <div className="card__hero hero">
           <img src={this.props.card['hero-icon']} alt="" className="hero__avatar" />
