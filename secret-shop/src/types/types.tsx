@@ -36,4 +36,30 @@ type CurrentPageProps = {
   page: string;
 };
 
-export type { Card, Cards, CardProps, CardListProps, SearchState, SearchProps, CurrentPageProps };
+type FormElementsProps = {
+  inputValue: (value: string) => void;
+};
+
+type FormTextInputProps = {
+  label: string;
+  name: string;
+  id: string;
+};
+
+type FormState = {
+  itemName: string;
+  heroName: string;
+};
+
+export type {
+  Card,
+  Cards,
+  CardProps,
+  CardListProps,
+  SearchState,
+  SearchProps,
+  CurrentPageProps,
+  FormElementsProps,
+  FormTextInputProps,
+  FormState,
+};
