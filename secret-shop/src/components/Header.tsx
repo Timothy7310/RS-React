@@ -26,6 +26,9 @@ class Header extends React.Component<CurrentPageProps> {
             <NavLink to="/about" className={({ isActive }) => this.getActiveClass(isActive)}>
               About us
             </NavLink>
+            <NavLink to="/form" className={({ isActive }) => this.getActiveClass(isActive)}>
+              Form
+            </NavLink>
           </nav>
         </div>
       </header>

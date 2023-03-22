@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import AboutUsPage from './pages/AboutUsPage';
 import MainPage from './pages/MainPage';
 import NotFoundPage from './pages/NotFoundPage';
+import FormPage from './pages/FormPage';
 
 import Layout from './components/Layout';
 import './styles/fonts.scss';
@@ -18,6 +19,7 @@ class App extends React.Component {
           <Route path="/" element={<Layout />}>
             <Route index element={<MainPage page={'Main'} />} />
             <Route path="about" element={<AboutUsPage page={'About'} />} />
+            <Route path="form" element={<FormPage page={'Form'} />} />
             <Route path="*" element={<NotFoundPage page={'404'} />} />
           </Route>
         </Routes>
