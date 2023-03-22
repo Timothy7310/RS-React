@@ -2,8 +2,8 @@ import React from 'react';
 import FormTextInput from './FormTextInput';
 import FormDateInput from './FormDateInput';
 import FormSelect from './FormSelect';
-import { FormState, EmptyProps } from '../types/types';
-import '../styles/blocks/form.scss';
+import { FormState, EmptyProps } from '../../types/types';
+import '../../styles/blocks/form.scss';
 
 class Form extends React.Component<EmptyProps, FormState> {
   constructor(props: EmptyProps) {

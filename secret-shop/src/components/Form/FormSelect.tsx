@@ -1,6 +1,6 @@
 import React from 'react';
-import { FormElementsProps, FormTextInputProps } from '../types/types';
-import rarityOptions from '../assets/rarityOptions';
+import { FormElementsProps, FormTextInputProps } from '../../types/types';
+import rarityOptions from '../../assets/rarityOptions';
 
 class FormSelect extends React.Component<FormElementsProps & FormTextInputProps> {
   selectRef: React.RefObject<HTMLSelectElement>;

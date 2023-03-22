@@ -1,16 +1,16 @@
 import React from 'react';
-import { FormElementsProps, FormTextInputProps } from '../types/types';
+import { FormElementsProps, FormTextInputProps } from '../../types/types';
 
-class FormDateInput extends React.Component<FormElementsProps & FormTextInputProps> {
-  dateInputRef: React.RefObject<HTMLInputElement>;
+class FormTextInput extends React.Component<FormElementsProps & FormTextInputProps> {
+  textInputRef: React.RefObject<HTMLInputElement>;
 
   constructor(props: FormElementsProps & FormTextInputProps) {
     super(props);
-    this.dateInputRef = React.createRef();
+    this.textInputRef = React.createRef();
   }
 
   handleChange() {
-    this.props.inputValue(this.dateInputRef.current?.value || '');
+    this.props.inputValue(this.textInputRef.current?.value || '');
   }
 
   render() {
@@ -20,10 +20,10 @@ class FormDateInput extends React.Component<FormElementsProps & FormTextInputPro
           {this.props.label}
         </label>
         <input
-          type="date"
+          type="text"
           name={this.props.name}
           onChange={() => this.handleChange()}
-          ref={this.dateInputRef}
+          ref={this.textInputRef}
           id={this.props.id}
           className="form__element-input"
         />
@@ -32,4 +32,4 @@ class FormDateInput extends React.Component<FormElementsProps & FormTextInputPro
   }
 }
 
-export default FormDateInput;
+export default FormTextInput;

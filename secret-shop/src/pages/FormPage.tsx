@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import { CurrentPageProps } from '../types/types';
-import Form from '../components/Form';
+import Form from '../components/Form/Form';
 import '../styles/blocks/form-page.scss';
 
 class FormPage extends React.Component<CurrentPageProps> {
