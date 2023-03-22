@@ -1,5 +1,6 @@
 import React from 'react';
 import FormTextInput from './FormTextInput';
+import FormDateInput from './FormDateInput';
 import { FormState, EmptyProps } from '../types/types';
 import '../styles/blocks/form.scss';
 
@@ -9,6 +10,7 @@ class Form extends React.Component<EmptyProps, FormState> {
     this.state = {
       itemName: '',
       heroName: '',
+      date: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -37,6 +39,12 @@ class Form extends React.Component<EmptyProps, FormState> {
           name="heroName"
           id="formHeroName"
           inputValue={(value) => this.handleChange(value, 'heroName')}
+        />
+        <FormDateInput
+          label="Date of creation"
+          name="date"
+          id="formDate"
+          inputValue={(value) => this.handleChange(value, 'date')}
         />
         <input className="form__submit" type="submit" value="Submit" />
       </form>

@@ -49,6 +49,7 @@ type FormTextInputProps = {
 type FormState = {
   itemName: string;
   heroName: string;
+  date: string;
 };
 
 export type {
