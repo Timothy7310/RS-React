@@ -50,6 +50,7 @@ type FormState = {
   itemName: string;
   heroName: string;
   date: string;
+  rarity: string;
 };
 
 export type {
