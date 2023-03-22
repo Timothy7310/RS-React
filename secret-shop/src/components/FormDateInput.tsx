@@ -2,15 +2,15 @@ import React from 'react';
 import { FormElementsProps, FormTextInputProps } from '../types/types';
 
 class FormDateInput extends React.Component<FormElementsProps & FormTextInputProps> {
-  dateInput: React.RefObject<HTMLInputElement>;
+  dateInputRef: React.RefObject<HTMLInputElement>;
 
   constructor(props: FormElementsProps & FormTextInputProps) {
     super(props);
-    this.dateInput = React.createRef();
+    this.dateInputRef = React.createRef();
   }
 
   handleChange() {
-    this.props.inputValue(this.dateInput.current?.value || '');
+    this.props.inputValue(this.dateInputRef.current?.value || '');
   }
 
   render() {
@@ -23,7 +23,7 @@ class FormDateInput extends React.Component<FormElementsProps & FormTextInputPro
           type="date"
           name={this.props.name}
           onChange={() => this.handleChange()}
-          ref={this.dateInput}
+          ref={this.dateInputRef}
           id={this.props.id}
           className="form__element-input"
         />
