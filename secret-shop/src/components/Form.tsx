@@ -1,14 +1,10 @@
 import React from 'react';
 import FormTextInput from './FormTextInput';
-import { FormState } from '../types/types';
+import { FormState, EmptyProps } from '../types/types';
 import '../styles/blocks/form.scss';
 
-type TForm = {
-  [key: string]: never;
-};
-
-class Form extends React.Component<TForm, FormState> {
-  constructor(props: TForm) {
+class Form extends React.Component<EmptyProps, FormState> {
+  constructor(props: EmptyProps) {
     super(props);
     this.state = {
       itemName: '',

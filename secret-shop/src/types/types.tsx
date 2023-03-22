@@ -28,7 +28,7 @@ type SearchState = {
   value: string;
 };
 
-type SearchProps = {
+type EmptyProps = {
   [key: string]: never;
 };
 
@@ -57,7 +57,7 @@ export type {
   CardProps,
   CardListProps,
   SearchState,
-  SearchProps,
+  EmptyProps,
   CurrentPageProps,
   FormElementsProps,
   FormTextInputProps,

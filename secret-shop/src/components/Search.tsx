@@ -1,9 +1,9 @@
 import React from 'react';
 import '../styles/blocks/search.scss';
-import { SearchProps, SearchState } from 'types/types';
+import { EmptyProps, SearchState } from 'types/types';
 
-class Search extends React.Component<SearchProps, SearchState> {
-  constructor(props: SearchProps) {
+class Search extends React.Component<EmptyProps, SearchState> {
+  constructor(props: EmptyProps) {
     super(props);
 
     this.state = {
