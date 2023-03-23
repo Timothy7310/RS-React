@@ -44,6 +44,10 @@ type FormCheckboxProps = {
   inputValue: (value: boolean) => void;
 };
 
+type FormNumberInputProps = {
+  inputValue: (value: number) => void;
+};
+
 type FormTextInputProps = {
   label: string;
   name: string;
@@ -59,6 +63,7 @@ type FormState = {
   side: string;
   itemImage: string;
   heroImage: string;
+  price: number;
 };
 
 export type {
@@ -73,4 +78,5 @@ export type {
   FormTextInputProps,
   FormState,
   FormCheckboxProps,
+  FormNumberInputProps,
 };

@@ -6,6 +6,7 @@ import FormCheckbox from './FormCheckbox';
 import FormChekboxWrap from './FormChekboxWrap';
 import FormRadio from './FormRadio';
 import FormRadioWrap from './FormRadioWrap';
+import FormNumberInput from './FormNumberInput';
 import { FormState, EmptyProps } from '../../types/types';
 import FormFileInput from './FormFileInput';
 import '../../styles/blocks/form.scss';
@@ -22,12 +23,13 @@ class Form extends React.Component<EmptyProps, FormState> {
       side: '',
       itemImage: '',
       heroImage: '',
+      price: 0,
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(value: string | boolean, field: string) {
+  handleChange(value: string | boolean | number, field: string) {
     this.setState((formState) => {
       console.log(formState);
       return {
@@ -97,6 +99,12 @@ class Form extends React.Component<EmptyProps, FormState> {
           name="heroImage"
           id="heroImage"
           inputValue={(value) => this.handleChange(value, 'heroImage')}
+        />
+        <FormNumberInput
+          label="Price"
+          name="price"
+          id="formItemPrice"
+          inputValue={(value) => this.handleChange(value, 'itemName')}
         />
         <input className="form__submit" type="submit" value="Submit" />
       </form>
