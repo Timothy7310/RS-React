@@ -7,6 +7,7 @@ import FormChekboxWrap from './FormChekboxWrap';
 import FormRadio from './FormRadio';
 import FormRadioWrap from './FormRadioWrap';
 import { FormState, EmptyProps } from '../../types/types';
+import FormFileInput from './FormFileInput';
 import '../../styles/blocks/form.scss';
 
 class Form extends React.Component<EmptyProps, FormState> {
@@ -19,6 +20,7 @@ class Form extends React.Component<EmptyProps, FormState> {
       rarity: '',
       hasBuy: false,
       side: '',
+      itemImage: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -83,6 +85,12 @@ class Form extends React.Component<EmptyProps, FormState> {
             inputValue={(value) => this.handleChange(value, 'side')}
           />
         </FormRadioWrap>
+        <FormFileInput
+          label="Item image"
+          name="itemImage"
+          id="itemImage"
+          inputValue={(value) => this.handleChange(value, 'itemImage')}
+        />
         <input className="form__submit" type="submit" value="Submit" />
       </form>
     );

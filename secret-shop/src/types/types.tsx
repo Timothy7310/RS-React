@@ -57,6 +57,7 @@ type FormState = {
   rarity: string;
   hasBuy: boolean;
   side: string;
+  itemImage: string;
 };
 
 export type {
