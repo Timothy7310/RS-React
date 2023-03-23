@@ -21,6 +21,7 @@ class Form extends React.Component<EmptyProps, FormState> {
       hasBuy: false,
       side: '',
       itemImage: '',
+      heroImage: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -90,6 +91,12 @@ class Form extends React.Component<EmptyProps, FormState> {
           name="itemImage"
           id="itemImage"
           inputValue={(value) => this.handleChange(value, 'itemImage')}
+        />
+        <FormFileInput
+          label="Hero image"
+          name="heroImage"
+          id="heroImage"
+          inputValue={(value) => this.handleChange(value, 'heroImage')}
         />
         <input className="form__submit" type="submit" value="Submit" />
       </form>

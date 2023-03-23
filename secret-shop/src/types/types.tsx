@@ -58,6 +58,7 @@ type FormState = {
   hasBuy: boolean;
   side: string;
   itemImage: string;
+  heroImage: string;
 };
 
 export type {
