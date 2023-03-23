@@ -4,6 +4,8 @@ import FormDateInput from './FormDateInput';
 import FormSelect from './FormSelect';
 import FormCheckbox from './FormCheckbox';
 import FormChekboxWrap from './FormChekboxWrap';
+import FormRadio from './FormRadio';
+import FormRadioWrap from './FormRadioWrap';
 import { FormState, EmptyProps } from '../../types/types';
 import '../../styles/blocks/form.scss';
 
@@ -16,6 +18,7 @@ class Form extends React.Component<EmptyProps, FormState> {
       date: '',
       rarity: '',
       hasBuy: false,
+      side: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -66,6 +69,20 @@ class Form extends React.Component<EmptyProps, FormState> {
             inputValue={(value) => this.handleChange(value, 'hasBuy')}
           />
         </FormChekboxWrap>
+        <FormRadioWrap>
+          <FormRadio
+            label="radiant"
+            name="side"
+            id="sideRadiant"
+            inputValue={(value) => this.handleChange(value, 'side')}
+          />
+          <FormRadio
+            label="dire"
+            name="side"
+            id="sideDire"
+            inputValue={(value) => this.handleChange(value, 'side')}
+          />
+        </FormRadioWrap>
         <input className="form__submit" type="submit" value="Submit" />
       </form>
     );
