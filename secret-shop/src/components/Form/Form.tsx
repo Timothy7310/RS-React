@@ -12,6 +12,8 @@ import FormFileInput from './FormFileInput';
 import '../../styles/blocks/form.scss';
 
 class Form extends React.Component<EmptyProps, FormState> {
+  formRef: React.RefObject<HTMLInputElement>;
+
   constructor(props: EmptyProps) {
     super(props);
     this.state = {
@@ -25,8 +27,14 @@ class Form extends React.Component<EmptyProps, FormState> {
       heroImage: '',
       price: 0,
     };
-
+    this.formRef = React.createRef();
     this.handleChange = this.handleChange.bind(this);
+    this.getCardInfo = this.getCardInfo.bind(this);
+  }
+
+  getCardInfo(event: React.SyntheticEvent<HTMLFormElement>) {
+    event.preventDefault();
+    console.log(this.state);
   }
 
   handleChange(value: string | boolean | number, field: string) {
@@ -41,7 +49,7 @@ class Form extends React.Component<EmptyProps, FormState> {
 
   render() {
     return (
-      <form action="" className="form">
+      <form action="" onSubmit={this.getCardInfo} className="form">
         <FormTextInput
           label="Item name"
           name="itemName"
@@ -104,7 +112,7 @@ class Form extends React.Component<EmptyProps, FormState> {
           label="Price"
           name="price"
           id="formItemPrice"
-          inputValue={(value) => this.handleChange(value, 'itemName')}
+          inputValue={(value) => this.handleChange(value, 'price')}
         />
         <input className="form__submit" type="submit" value="Submit" />
       </form>

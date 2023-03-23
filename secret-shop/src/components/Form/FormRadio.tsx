@@ -25,6 +25,7 @@ class FormRadio extends React.Component<FormElementsProps & FormTextInputProps> 
             value={this.props.label}
             ref={this.radioRef}
             onChange={() => this.handleChange()}
+            required
           />
           <span className="goods-filter-radio__checkmark"></span>
         </label>

@@ -26,7 +26,11 @@ class FormSelect extends React.Component<FormElementsProps & FormTextInputProps>
           name={this.props.name}
           id={this.props.id}
           className="form__element-input"
+          required
         >
+          <option value="" hidden>
+            Choose one
+          </option>
           {rarityOptions.map((x) => (
             <option key={x.id} value={x.name}>
               {x.name}

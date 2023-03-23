@@ -21,6 +21,7 @@ class FormDateInput extends React.Component<FormElementsProps & FormTextInputPro
         </label>
         <input
           type="date"
+          required
           name={this.props.name}
           onChange={() => this.handleChange()}
           ref={this.dateInputRef}

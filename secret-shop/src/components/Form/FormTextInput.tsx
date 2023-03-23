@@ -21,6 +21,7 @@ class FormTextInput extends React.Component<FormElementsProps & FormTextInputPro
         </label>
         <input
           type="text"
+          required
           name={this.props.name}
           onChange={() => this.handleChange()}
           ref={this.textInputRef}

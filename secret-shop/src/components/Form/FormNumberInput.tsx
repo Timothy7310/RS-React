@@ -27,6 +27,7 @@ class FormNumberInput extends React.Component<FormNumberInputProps & FormTextInp
           ref={this.numberInputRef}
           id={this.props.id}
           className="form__element-input"
+          required
         />
       </div>
     );

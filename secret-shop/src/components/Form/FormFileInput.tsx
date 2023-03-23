@@ -30,6 +30,7 @@ class FormFileInput extends React.Component<FormElementsProps & FormTextInputPro
           ref={this.fileInputRef}
           id={this.props.id}
           className="form__element-input"
+          required
         />
       </div>
     );
