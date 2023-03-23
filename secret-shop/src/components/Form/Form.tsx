@@ -2,6 +2,8 @@ import React from 'react';
 import FormTextInput from './FormTextInput';
 import FormDateInput from './FormDateInput';
 import FormSelect from './FormSelect';
+import FormCheckbox from './FormCheckbox';
+import FormChekboxWrap from './FormChekboxWrap';
 import { FormState, EmptyProps } from '../../types/types';
 import '../../styles/blocks/form.scss';
 
@@ -13,12 +15,13 @@ class Form extends React.Component<EmptyProps, FormState> {
       heroName: '',
       date: '',
       rarity: '',
+      hasBuy: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(value: string, field: string) {
+  handleChange(value: string | boolean, field: string) {
     this.setState((formState) => {
       console.log(formState);
       return {
@@ -55,6 +58,14 @@ class Form extends React.Component<EmptyProps, FormState> {
           id="formRarity"
           inputValue={(value) => this.handleChange(value, 'rarity')}
         />
+        <FormChekboxWrap>
+          <FormCheckbox
+            label="Buy button"
+            name="hasBuy"
+            id="hasBuy"
+            inputValue={(value) => this.handleChange(value, 'hasBuy')}
+          />
+        </FormChekboxWrap>
         <input className="form__submit" type="submit" value="Submit" />
       </form>
     );
