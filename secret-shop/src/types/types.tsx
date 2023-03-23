@@ -20,11 +20,15 @@ type Card = {
 type Cards = Card[];
 
 type CardProps = {
-  card: Card;
+  card: Card | FormState;
 };
 
 type CardListProps = {
   cards: Cards;
+};
+
+type CardFormListProps = {
+  cards: FormState[];
 };
 
 type SearchState = {
@@ -51,6 +55,10 @@ type FormNumberInputProps = {
   inputValue: (value: number) => void;
 };
 
+type FormProps = {
+  cardValue: (card: FormState) => void;
+};
+
 type FormTextInputProps = {
   label: string;
   name: string;
@@ -64,7 +72,8 @@ type FormState = {
   rarity: string;
   hasBuy: boolean;
   side: string;
-  itemImage: string;
+  itemImage1: string;
+  itemImage2: string;
   heroImage: string;
   price: number;
 };
@@ -82,4 +91,6 @@ export type {
   FormState,
   FormCheckboxProps,
   FormNumberInputProps,
+  FormProps,
+  CardFormListProps,
 };

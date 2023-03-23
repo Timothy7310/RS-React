@@ -1,12 +1,24 @@
 import React from 'react';
 import Header from '../components/Header';
-import { CurrentPageProps } from '../types/types';
+import { CurrentPageProps, FormState } from '../types/types';
 import Form from '../components/Form/Form';
 import '../styles/blocks/form-page.scss';
+import CardFormList from '../components/Card/CardFormList';
 
-class FormPage extends React.Component<CurrentPageProps> {
+class FormPage extends React.Component<CurrentPageProps, { cards: FormState[] }> {
   constructor(props: CurrentPageProps) {
     super(props);
+    this.state = {
+      cards: [],
+    };
+    this.addCard = this.addCard.bind(this);
+  }
+
+  addCard(card: FormState) {
+    console.log(this.state);
+    this.setState((formPageState) => {
+      return { cards: [...formPageState.cards, card] };
+    });
   }
 
   render() {
@@ -16,7 +28,8 @@ class FormPage extends React.Component<CurrentPageProps> {
         <main>
           <div className="form-page">
             <div className="form-page__wrap container">
-              <Form />
+              <Form cardValue={(value) => this.addCard(value)} />
+              {this.state.cards.length > 0 && <CardFormList cards={this.state.cards} />}
             </div>
           </div>
         </main>

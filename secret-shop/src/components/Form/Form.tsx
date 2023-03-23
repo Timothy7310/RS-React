@@ -7,14 +7,14 @@ import FormChekboxWrap from './FormChekboxWrap';
 import FormRadio from './FormRadio';
 import FormRadioWrap from './FormRadioWrap';
 import FormNumberInput from './FormNumberInput';
-import { FormState, EmptyProps } from '../../types/types';
+import { FormState, FormProps } from '../../types/types';
 import FormFileInput from './FormFileInput';
 import '../../styles/blocks/form.scss';
 
-class Form extends React.Component<EmptyProps, FormState> {
-  formRef: React.RefObject<HTMLInputElement>;
+class Form extends React.Component<FormProps, FormState> {
+  formRef: React.RefObject<HTMLFormElement>;
 
-  constructor(props: EmptyProps) {
+  constructor(props: FormProps) {
     super(props);
     this.state = {
       itemName: '',
@@ -23,18 +23,20 @@ class Form extends React.Component<EmptyProps, FormState> {
       rarity: '',
       hasBuy: false,
       side: '',
-      itemImage: '',
+      itemImage1: '',
+      itemImage2: '',
       heroImage: '',
       price: 0,
     };
     this.formRef = React.createRef();
     this.handleChange = this.handleChange.bind(this);
-    this.getCardInfo = this.getCardInfo.bind(this);
+    this.saveCardInfo = this.saveCardInfo.bind(this);
   }
 
-  getCardInfo(event: React.SyntheticEvent<HTMLFormElement>) {
+  saveCardInfo(event: React.SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log(this.state);
+    this.formRef.current?.reset();
+    this.props.cardValue(this.state);
   }
 
   handleChange(value: string | boolean | number, field: string) {
@@ -49,7 +51,7 @@ class Form extends React.Component<EmptyProps, FormState> {
 
   render() {
     return (
-      <form action="" onSubmit={this.getCardInfo} className="form">
+      <form action="" onSubmit={this.saveCardInfo} className="form" ref={this.formRef}>
         <FormTextInput
           label="Item name"
           name="itemName"
@@ -100,7 +102,7 @@ class Form extends React.Component<EmptyProps, FormState> {
           label="Item image"
           name="itemImage"
           id="itemImage"
-          inputValue={(value) => this.handleChange(value, 'itemImage')}
+          inputValue={(value) => this.handleChange(value, 'itemImage1')}
         />
         <FormFileInput
           label="Hero image"
