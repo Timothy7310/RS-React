@@ -32,6 +32,19 @@
         grid-row: 2;
         position: relative;
     }
+    &__date{
+        font-size: 15px;
+    }
+    &__side{
+        text-transform: capitalize;
+        text-align: right;
+        &--radiant{
+            color: var(--color-accent);
+        }
+        &--dire{
+            color: var(--color-warning);
+        }
+    }
     &__price {
         grid-column: 2;
         grid-row: 2;

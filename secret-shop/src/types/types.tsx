@@ -1,17 +1,20 @@
 type Card = {
   id: number;
-  'item-name': string;
+  itemName: string;
   category: string;
   type: string;
-  hero: string;
+  heroName: string;
   rarity: string;
   description: string;
   price: number;
   stock: number;
-  'hero-icon': string;
-  img1: string;
-  img2: string;
-  'video-link': string;
+  heroImage: string;
+  itemImage1: string;
+  itemImage2: string;
+  videoLink: string;
+  date: string;
+  hasBuy: boolean;
+  side: string;
 };
 
 type Cards = Card[];
