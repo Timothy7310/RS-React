@@ -236,6 +236,7 @@ class Form extends React.Component<FormProps, FormState> {
     await this.checkValid();
     if (!this.hasErrors()) {
       this.saveCardInfo();
+      alert('New card created');
       this.formRef.current?.reset();
     }
   }
