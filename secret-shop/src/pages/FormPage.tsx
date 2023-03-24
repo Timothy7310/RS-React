@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from '../components/Header';
-import { CurrentPageProps, FormState } from '../types/types';
+import { CurrentPageProps, FormCard } from '../types/types';
 import Form from '../components/Form/Form';
 import '../styles/blocks/form-page.scss';
 import CardFormList from '../components/Card/CardFormList';
 
-class FormPage extends React.Component<CurrentPageProps, { cards: FormState[] }> {
+class FormPage extends React.Component<CurrentPageProps, { cards: FormCard[] }> {
   constructor(props: CurrentPageProps) {
     super(props);
     this.state = {
@@ -14,7 +14,7 @@ class FormPage extends React.Component<CurrentPageProps, { cards: FormState[] }>
     this.addCard = this.addCard.bind(this);
   }
 
-  addCard(card: FormState) {
+  addCard(card: FormCard) {
     console.log(this.state);
     this.setState((formPageState) => {
       return { cards: [...formPageState.cards, card] };

@@ -27,6 +27,8 @@ class FormDateInput extends React.Component<FormElementsProps & FormTextInputPro
           onChange={() => this.handleChange()}
           ref={this.dateInputRef}
           id={this.props.id}
+          min="2000-01-01"
+          max="2032-01-01"
           className="form__element-input"
         />
         <FormErrorMessage valid={this.props.valid} message="Ops some mistake! try harder" />

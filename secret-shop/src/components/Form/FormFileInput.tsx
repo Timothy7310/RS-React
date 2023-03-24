@@ -11,9 +11,13 @@ class FormFileInput extends React.Component<FormElementsProps & FormTextInputPro
   }
 
   handleChange() {
-    const file = this.fileInputRef?.current?.files
-      ? URL.createObjectURL(this.fileInputRef.current.files[0])
-      : '';
+    const files = this.fileInputRef?.current?.files;
+    let file = '';
+    if (files) {
+      if (['image/jpeg', 'image/png'].includes(files[0].type)) {
+        file = URL.createObjectURL(files[0]);
+      }
+    }
     this.props.inputValue(file);
   }
 

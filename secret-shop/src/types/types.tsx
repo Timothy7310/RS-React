@@ -20,7 +20,7 @@ type Card = {
 type Cards = Card[];
 
 type CardProps = {
-  card: Card | FormState;
+  card: Card | FormCard;
 };
 
 type CardListProps = {
@@ -28,7 +28,7 @@ type CardListProps = {
 };
 
 type CardFormListProps = {
-  cards: FormState[];
+  cards: FormCard[];
 };
 
 type SearchState = {
@@ -61,8 +61,22 @@ type FormNumberInputProps = {
   valid: boolean;
 };
 
+type FormCard = {
+  // itemName: string;
+  // heroName: string;
+  // date: string;
+  // rarity: string;
+  // hasBuy: boolean;
+  // side: string;
+  // itemImage1: string;
+  // itemImage2: string;
+  // heroImage: string;
+  // price: number;
+  [k: string]: string | number | boolean;
+};
+
 type FormProps = {
-  cardValue: (card: FormState) => void;
+  cardValue: (card: FormCard) => void;
 };
 
 type FormTextInputProps = {
@@ -72,16 +86,16 @@ type FormTextInputProps = {
 };
 
 type FormState = {
-  itemName: string;
-  heroName: string;
-  date: string;
-  rarity: string;
-  hasBuy: boolean;
-  side: string;
-  itemImage1: string;
-  itemImage2: string;
-  heroImage: string;
-  price: number;
+  itemName: { value: string; isError: boolean };
+  heroName: { value: string; isError: boolean };
+  date: { value: string; isError: boolean };
+  rarity: { value: string; isError: boolean };
+  hasBuy: { value: boolean; isError: boolean };
+  side: { value: string; isError: boolean };
+  itemImage1: { value: string; isError: boolean };
+  itemImage2: { value: string; isError: boolean };
+  heroImage: { value: string; isError: boolean };
+  price: { value: number; isError: boolean };
 };
 
 type FormErrorMessageProps = {
@@ -106,4 +120,5 @@ export type {
   CardFormListProps,
   FormErrorMessageProps,
   FormRadioProps,
+  FormCard,
 };

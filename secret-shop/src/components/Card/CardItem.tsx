@@ -17,7 +17,7 @@ class CardItem extends React.Component<CardProps> {
           {this.props.card.side}
         </div>
         <div className="card__hero hero">
-          <img src={this.props.card.heroImage} alt="" className="hero__avatar" />
+          <img src={this.props.card.heroImage as string} alt="" className="hero__avatar" />
           <span className={`hero__rareness ${this.props.card.rarity}`}>
             {this.props.card.rarity}
           </span>
