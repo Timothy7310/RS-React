@@ -28,7 +28,6 @@ class Form extends React.Component<FormProps, FormState> {
   itemNameRef: React.RefObject<FormTextInput>;
   heroNameRef: React.RefObject<FormTextInput>;
   priceRef: React.RefObject<FormNumberInput>;
-  itemImageRef: React.RefObject<FormFileInput>;
 
   constructor(props: FormProps) {
     super(props);
@@ -78,7 +77,6 @@ class Form extends React.Component<FormProps, FormState> {
     this.itemNameRef = React.createRef<FormTextInput>();
     this.heroNameRef = React.createRef<FormTextInput>();
     this.priceRef = React.createRef<FormNumberInput>();
-    this.itemImageRef = React.createRef<FormFileInput>();
     this.saveCardInfo = this.saveCardInfo.bind(this);
     this.hasErrors = this.hasErrors.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -301,7 +299,6 @@ class Form extends React.Component<FormProps, FormState> {
           name="itemImage"
           id="itemImage"
           inputValue={(value) => this.handleChange(value, 'itemImage1')}
-          // ref={this.itemImageRef}
           valid={this.state.itemImage1.isError}
         />
         <FormFileInput
