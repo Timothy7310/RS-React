@@ -1,10 +1,10 @@
 import React from 'react';
-import { FormElementsProps, FormTextInputProps } from '../../types/types';
+import { FormRadioProps, FormTextInputProps } from '../../types/types';
 
-class FormRadio extends React.Component<FormElementsProps & FormTextInputProps> {
+class FormRadio extends React.Component<FormRadioProps & FormTextInputProps> {
   radioRef: React.RefObject<HTMLInputElement>;
 
-  constructor(props: FormElementsProps & FormTextInputProps) {
+  constructor(props: FormRadioProps & FormTextInputProps) {
     super(props);
     this.radioRef = React.createRef();
   }

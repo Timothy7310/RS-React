@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormElementsProps, FormTextInputProps } from '../../types/types';
 import rarityOptions from '../../assets/rarityOptions';
+import FormErrorMessage from './FormErrorMessage';
 
 class FormSelect extends React.Component<FormElementsProps & FormTextInputProps> {
   selectRef: React.RefObject<HTMLSelectElement>;
@@ -37,6 +38,7 @@ class FormSelect extends React.Component<FormElementsProps & FormTextInputProps>
             </option>
           ))}
         </select>
+        <FormErrorMessage valid={this.props.valid} message="Ops some mistake! try harder" />
       </div>
     );
   }

@@ -45,14 +45,20 @@ type CurrentPageProps = {
 
 type FormElementsProps = {
   inputValue: (value: string) => void;
+  valid: boolean;
 };
 
 type FormCheckboxProps = {
   inputValue: (value: boolean) => void;
 };
 
+type FormRadioProps = {
+  inputValue: (value: string) => void;
+};
+
 type FormNumberInputProps = {
   inputValue: (value: number) => void;
+  valid: boolean;
 };
 
 type FormProps = {
@@ -78,6 +84,11 @@ type FormState = {
   price: number;
 };
 
+type FormErrorMessageProps = {
+  valid: boolean;
+  message: string;
+};
+
 export type {
   Card,
   Cards,
@@ -93,4 +104,6 @@ export type {
   FormNumberInputProps,
   FormProps,
   CardFormListProps,
+  FormErrorMessageProps,
+  FormRadioProps,
 };

@@ -57,26 +57,30 @@ class Form extends React.Component<FormProps, FormState> {
           name="itemName"
           id="formItemName"
           inputValue={(value) => this.handleChange(value, 'itemName')}
+          valid={true}
         />
         <FormTextInput
           label="Hero name"
           name="heroName"
           id="formHeroName"
           inputValue={(value) => this.handleChange(value, 'heroName')}
+          valid={false}
         />
         <FormDateInput
           label="Date of creation"
           name="date"
           id="formDate"
           inputValue={(value) => this.handleChange(value, 'date')}
+          valid={true}
         />
         <FormSelect
           label="Rarity"
           name="rarity"
           id="formRarity"
           inputValue={(value) => this.handleChange(value, 'rarity')}
+          valid={true}
         />
-        <FormChekboxWrap>
+        <FormChekboxWrap valid={true}>
           <FormCheckbox
             label="Buy button"
             name="hasBuy"
@@ -84,7 +88,7 @@ class Form extends React.Component<FormProps, FormState> {
             inputValue={(value) => this.handleChange(value, 'hasBuy')}
           />
         </FormChekboxWrap>
-        <FormRadioWrap>
+        <FormRadioWrap valid={false}>
           <FormRadio
             label="radiant"
             name="side"
@@ -103,18 +107,21 @@ class Form extends React.Component<FormProps, FormState> {
           name="itemImage"
           id="itemImage"
           inputValue={(value) => this.handleChange(value, 'itemImage1')}
+          valid={true}
         />
         <FormFileInput
           label="Hero image"
           name="heroImage"
           id="heroImage"
           inputValue={(value) => this.handleChange(value, 'heroImage')}
+          valid={false}
         />
         <FormNumberInput
           label="Price"
           name="price"
           id="formItemPrice"
           inputValue={(value) => this.handleChange(value, 'price')}
+          valid={true}
         />
         <input className="form__submit" type="submit" value="Submit" />
       </form>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormElementsProps, FormTextInputProps } from '../../types/types';
+import FormErrorMessage from './FormErrorMessage';
 
 class FormDateInput extends React.Component<FormElementsProps & FormTextInputProps> {
   dateInputRef: React.RefObject<HTMLInputElement>;
@@ -28,6 +29,7 @@ class FormDateInput extends React.Component<FormElementsProps & FormTextInputPro
           id={this.props.id}
           className="form__element-input"
         />
+        <FormErrorMessage valid={this.props.valid} message="Ops some mistake! try harder" />
       </div>
     );
   }

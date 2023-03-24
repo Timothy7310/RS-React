@@ -1,5 +1,5 @@
 import React from 'react';
-import CardItem from '../src/components/CardItem';
+import CardItem from '../src/components/Card/CardItem';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 

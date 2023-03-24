@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormElementsProps, FormTextInputProps } from '../../types/types';
+import FormErrorMessage from './FormErrorMessage';
 
 class FormFileInput extends React.Component<FormElementsProps & FormTextInputProps> {
   fileInputRef: React.RefObject<HTMLInputElement>;
@@ -32,6 +33,7 @@ class FormFileInput extends React.Component<FormElementsProps & FormTextInputPro
           className="form__element-input"
           required
         />
+        <FormErrorMessage valid={this.props.valid} message="Ops some mistake! try harder" />
       </div>
     );
   }

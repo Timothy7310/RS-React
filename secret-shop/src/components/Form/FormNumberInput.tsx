@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormNumberInputProps, FormTextInputProps } from '../../types/types';
+import FormErrorMessage from './FormErrorMessage';
 
 class FormNumberInput extends React.Component<FormNumberInputProps & FormTextInputProps> {
   numberInputRef: React.RefObject<HTMLInputElement>;
@@ -29,6 +30,7 @@ class FormNumberInput extends React.Component<FormNumberInputProps & FormTextInp
           className="form__element-input"
           required
         />
+        <FormErrorMessage valid={this.props.valid} message="Ops some mistake! try harder" />
       </div>
     );
   }

@@ -5,6 +5,10 @@
     padding: 25px 35px;
     border-radius: 15px;
     background-color: var(--color-dark);
+    &-error{
+        font-size: 11px;
+        color: var(--color-warning);
+    }
     &__element{
         &-wrap{
             display: flex;
