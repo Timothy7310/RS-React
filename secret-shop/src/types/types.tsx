@@ -62,16 +62,6 @@ type FormNumberInputProps = {
 };
 
 type FormCard = {
-  // itemName: string;
-  // heroName: string;
-  // date: string;
-  // rarity: string;
-  // hasBuy: boolean;
-  // side: string;
-  // itemImage1: string;
-  // itemImage2: string;
-  // heroImage: string;
-  // price: number;
   [k: string]: string | number | boolean;
 };
 
