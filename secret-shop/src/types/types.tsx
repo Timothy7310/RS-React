@@ -44,20 +44,6 @@ type CurrentPageProps = {
 };
 
 type FormElementsProps = {
-  inputValue: (value: string) => void;
-  valid: boolean;
-};
-
-type FormCheckboxProps = {
-  inputValue: (value: boolean) => void;
-};
-
-type FormRadioProps = {
-  inputValue: (value: string) => void;
-};
-
-type FormNumberInputProps = {
-  inputValue: (value: number) => void;
   valid: boolean;
 };
 
@@ -104,11 +90,8 @@ export type {
   FormElementsProps,
   FormTextInputProps,
   FormState,
-  FormCheckboxProps,
-  FormNumberInputProps,
   FormProps,
   CardFormListProps,
   FormErrorMessageProps,
-  FormRadioProps,
   FormCard,
 };

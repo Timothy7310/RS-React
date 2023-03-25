@@ -10,10 +10,6 @@ class FormDateInput extends React.Component<FormElementsProps & FormTextInputPro
     this.dateInputRef = React.createRef();
   }
 
-  handleChange() {
-    this.props.inputValue(this.dateInputRef.current?.value || '');
-  }
-
   render() {
     return (
       <div className="form__element-wrap">
@@ -24,7 +20,6 @@ class FormDateInput extends React.Component<FormElementsProps & FormTextInputPro
           type="date"
           required
           name={this.props.name}
-          onChange={() => this.handleChange()}
           ref={this.dateInputRef}
           id={this.props.id}
           min="2000-01-01"

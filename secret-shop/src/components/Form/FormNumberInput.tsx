@@ -1,17 +1,13 @@
 import React from 'react';
-import { FormNumberInputProps, FormTextInputProps } from '../../types/types';
+import { FormElementsProps, FormTextInputProps } from '../../types/types';
 import FormErrorMessage from './FormErrorMessage';
 
-class FormNumberInput extends React.Component<FormNumberInputProps & FormTextInputProps> {
+class FormNumberInput extends React.Component<FormElementsProps & FormTextInputProps> {
   numberInputRef: React.RefObject<HTMLInputElement>;
 
-  constructor(props: FormNumberInputProps & FormTextInputProps) {
+  constructor(props: FormElementsProps & FormTextInputProps) {
     super(props);
     this.numberInputRef = React.createRef();
-  }
-
-  handleChange() {
-    this.props.inputValue(Number(this.numberInputRef.current?.value) || 0);
   }
 
   render() {
@@ -24,7 +20,6 @@ class FormNumberInput extends React.Component<FormNumberInputProps & FormTextInp
           type="number"
           min="0"
           name={this.props.name}
-          onChange={() => this.handleChange()}
           ref={this.numberInputRef}
           id={this.props.id}
           className="form__element-input"

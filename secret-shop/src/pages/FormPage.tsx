@@ -15,7 +15,6 @@ class FormPage extends React.Component<CurrentPageProps, { cards: FormCard[] }> 
   }
 
   addCard(card: FormCard) {
-    console.log(this.state);
     this.setState((formPageState) => {
       return { cards: [...formPageState.cards, card] };
     });

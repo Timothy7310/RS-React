@@ -1,16 +1,12 @@
 import React from 'react';
-import { FormRadioProps, FormTextInputProps } from '../../types/types';
+import { FormTextInputProps } from '../../types/types';
 
-class FormRadio extends React.Component<FormRadioProps & FormTextInputProps> {
+class FormRadio extends React.Component<FormTextInputProps> {
   radioRef: React.RefObject<HTMLInputElement>;
 
-  constructor(props: FormRadioProps & FormTextInputProps) {
+  constructor(props: FormTextInputProps) {
     super(props);
     this.radioRef = React.createRef();
-  }
-
-  handleChange() {
-    this.props.inputValue(this.radioRef.current?.value || '');
   }
 
   render() {
@@ -24,7 +20,6 @@ class FormRadio extends React.Component<FormRadioProps & FormTextInputProps> {
             name={this.props.name}
             value={this.props.label}
             ref={this.radioRef}
-            onChange={() => this.handleChange()}
             required
           />
           <span className="goods-filter-radio__checkmark"></span>

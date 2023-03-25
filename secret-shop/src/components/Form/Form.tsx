@@ -27,6 +27,13 @@ class Form extends React.Component<FormProps, FormState> {
   formRef: React.RefObject<HTMLFormElement>;
   itemNameRef: React.RefObject<FormTextInput>;
   heroNameRef: React.RefObject<FormTextInput>;
+  dateRef: React.RefObject<FormDateInput>;
+  rarityRef: React.RefObject<FormSelect>;
+  hasBuyRef: React.RefObject<FormCheckbox>;
+  sideDireRef: React.RefObject<FormRadio>;
+  sideRadiantRef: React.RefObject<FormRadio>;
+  itemImageRef: React.RefObject<FormFileInput>;
+  heroImageRef: React.RefObject<FormFileInput>;
   priceRef: React.RefObject<FormNumberInput>;
 
   constructor(props: FormProps) {
@@ -76,6 +83,13 @@ class Form extends React.Component<FormProps, FormState> {
     this.formRef = React.createRef();
     this.itemNameRef = React.createRef<FormTextInput>();
     this.heroNameRef = React.createRef<FormTextInput>();
+    this.dateRef = React.createRef<FormDateInput>();
+    this.rarityRef = React.createRef<FormSelect>();
+    this.hasBuyRef = React.createRef<FormCheckbox>();
+    this.sideDireRef = React.createRef<FormRadio>();
+    this.sideRadiantRef = React.createRef<FormRadio>();
+    this.itemImageRef = React.createRef<FormFileInput>();
+    this.heroImageRef = React.createRef<FormFileInput>();
     this.priceRef = React.createRef<FormNumberInput>();
     this.saveCardInfo = this.saveCardInfo.bind(this);
     this.hasErrors = this.hasErrors.bind(this);
@@ -86,6 +100,8 @@ class Form extends React.Component<FormProps, FormState> {
     this.checkItemImage = this.checkItemImage.bind(this);
     this.checkHeroImage = this.checkHeroImage.bind(this);
     this.checkValid = this.checkValid.bind(this);
+    this.getImageUrl = this.getImageUrl.bind(this);
+    this.getInfo = this.getInfo.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -229,8 +245,69 @@ class Form extends React.Component<FormProps, FormState> {
     await this.checkHeroImage();
   }
 
+  getImageUrl(files: FileList) {
+    let file = '';
+    if (files) {
+      if (['image/jpeg', 'image/png'].includes(files[0].type)) {
+        file = URL.createObjectURL(files[0]);
+      }
+    }
+    return file;
+  }
+
+  async getInfo() {
+    this.setState((formState) => {
+      return {
+        ...formState,
+        itemName: {
+          ...formState.itemName,
+          value: this.itemNameRef.current?.textInputRef.current?.value as string,
+        },
+        heroName: {
+          ...formState.heroName,
+          value: this.heroNameRef.current?.textInputRef.current?.value as string,
+        },
+        date: {
+          ...formState.date,
+          value: this.dateRef.current?.dateInputRef.current?.value as string,
+        },
+        rarity: {
+          ...formState.rarity,
+          value: this.rarityRef.current?.selectRef.current?.value as string,
+        },
+        hasBuy: {
+          ...formState.hasBuy,
+          value: this.hasBuyRef.current?.checkboxRef.current?.checked as boolean,
+        },
+        side: {
+          ...formState.side,
+          value: this.sideDireRef.current?.radioRef.current?.checked
+            ? (this.sideDireRef.current.radioRef.current.value as string)
+            : (this.sideRadiantRef.current?.radioRef.current?.value as string),
+        },
+        itemImage1: {
+          ...formState.itemImage1,
+          value: this.getImageUrl(
+            this.itemImageRef.current?.fileInputRef.current?.files as FileList
+          ) as string,
+        },
+        heroImage: {
+          ...formState.heroImage,
+          value: this.getImageUrl(
+            this.heroImageRef.current?.fileInputRef.current?.files as FileList
+          ) as string,
+        },
+        price: {
+          ...formState.price,
+          value: Number(this.priceRef.current?.numberInputRef.current?.value) as number,
+        },
+      };
+    });
+  }
+
   async handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
+    await this.getInfo();
     await this.checkValid();
     if (!this.hasErrors()) {
       this.saveCardInfo();
@@ -246,7 +323,6 @@ class Form extends React.Component<FormProps, FormState> {
           label="Item name"
           name="itemName"
           id="formItemName"
-          inputValue={(value) => this.handleChange(value, 'itemName')}
           ref={this.itemNameRef}
           valid={this.state.itemName.isError}
         />
@@ -254,7 +330,6 @@ class Form extends React.Component<FormProps, FormState> {
           label="Hero name"
           name="heroName"
           id="formHeroName"
-          inputValue={(value) => this.handleChange(value, 'heroName')}
           ref={this.heroNameRef}
           valid={this.state.heroName.isError}
         />
@@ -262,57 +337,41 @@ class Form extends React.Component<FormProps, FormState> {
           label="Date of creation"
           name="date"
           id="formDate"
-          inputValue={(value) => this.handleChange(value, 'date')}
+          ref={this.dateRef}
           valid={this.state.date.isError}
         />
         <FormSelect
           label="Rarity"
           name="rarity"
           id="formRarity"
-          inputValue={(value) => this.handleChange(value, 'rarity')}
+          ref={this.rarityRef}
           valid={this.state.rarity.isError}
         />
         <FormChekboxWrap valid={this.state.hasBuy.isError}>
-          <FormCheckbox
-            label="Buy button"
-            name="hasBuy"
-            id="hasBuy"
-            inputValue={(value) => this.handleChange(value, 'hasBuy')}
-          />
+          <FormCheckbox label="Buy button" name="hasBuy" id="hasBuy" ref={this.hasBuyRef} />
         </FormChekboxWrap>
         <FormRadioWrap valid={this.state.side.isError}>
-          <FormRadio
-            label="radiant"
-            name="side"
-            id="sideRadiant"
-            inputValue={(value) => this.handleChange(value, 'side')}
-          />
-          <FormRadio
-            label="dire"
-            name="side"
-            id="sideDire"
-            inputValue={(value) => this.handleChange(value, 'side')}
-          />
+          <FormRadio label="radiant" name="side" id="sideRadiant" ref={this.sideRadiantRef} />
+          <FormRadio label="dire" name="side" id="sideDire" ref={this.sideDireRef} />
         </FormRadioWrap>
         <FormFileInput
           label="Item image"
           name="itemImage"
           id="itemImage"
-          inputValue={(value) => this.handleChange(value, 'itemImage1')}
+          ref={this.itemImageRef}
           valid={this.state.itemImage1.isError}
         />
         <FormFileInput
           label="Hero image"
           name="heroImage"
           id="heroImage"
-          inputValue={(value) => this.handleChange(value, 'heroImage')}
+          ref={this.heroImageRef}
           valid={this.state.heroImage.isError}
         />
         <FormNumberInput
           label="Price"
           name="price"
           id="formItemPrice"
-          inputValue={(value) => this.handleChange(value, 'price')}
           ref={this.priceRef}
           valid={this.state.price.isError}
         />

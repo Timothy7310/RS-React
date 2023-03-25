@@ -11,10 +11,6 @@ class FormSelect extends React.Component<FormElementsProps & FormTextInputProps>
     this.selectRef = React.createRef();
   }
 
-  handleChange() {
-    this.props.inputValue(this.selectRef.current?.value || '');
-  }
-
   render() {
     return (
       <div className="form__element-wrap">
@@ -23,7 +19,6 @@ class FormSelect extends React.Component<FormElementsProps & FormTextInputProps>
         </label>
         <select
           ref={this.selectRef}
-          onChange={() => this.handleChange()}
           name={this.props.name}
           id={this.props.id}
           className="form__element-input"

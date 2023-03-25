@@ -10,10 +10,6 @@ class FormTextInput extends React.Component<FormElementsProps & FormTextInputPro
     this.textInputRef = React.createRef();
   }
 
-  handleChange() {
-    this.props.inputValue(this.textInputRef.current?.value || '');
-  }
-
   render() {
     return (
       <div className="form__element-wrap">
@@ -24,7 +20,6 @@ class FormTextInput extends React.Component<FormElementsProps & FormTextInputPro
           type="text"
           required
           name={this.props.name}
-          onChange={() => this.handleChange()}
           ref={this.textInputRef}
           id={this.props.id}
           className="form__element-input"
