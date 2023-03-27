@@ -7,17 +7,7 @@ import userEvent from '@testing-library/user-event';
 describe('FormTextInput component', () => {
   it('render', async () => {
     const user = userEvent.setup();
-    render(
-      <FormTextInput
-        label="Item name"
-        name="itemName"
-        id="formItemName"
-        inputValue={(value) => {
-          console.log(value);
-        }}
-        valid={false}
-      />
-    );
+    render(<FormTextInput label="Item name" name="itemName" id="formItemName" valid={false} />);
     const input = screen.getByLabelText('Item name') as HTMLInputElement;
     await user.type(input, 'qwerty');
     expect(input.value).toBe('qwerty');

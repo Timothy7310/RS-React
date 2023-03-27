@@ -7,17 +7,7 @@ import userEvent from '@testing-library/user-event';
 describe('FormSelect component', () => {
   it('render', async () => {
     const user = userEvent.setup();
-    render(
-      <FormSelect
-        label="Rarity"
-        name="rarity"
-        id="formRarity"
-        inputValue={(value) => {
-          console.log(value);
-        }}
-        valid={false}
-      />
-    );
+    render(<FormSelect label="Rarity" name="rarity" id="formRarity" valid={false} />);
     const select = screen.getByLabelText('Rarity') as HTMLSelectElement;
     await user.selectOptions(select, 'arcana');
     expect(select.value).toBe('arcana');
