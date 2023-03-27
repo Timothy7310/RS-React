@@ -318,7 +318,13 @@ class Form extends React.Component<FormProps, FormState> {
 
   render() {
     return (
-      <form action="" onSubmit={this.handleSubmit} className="form" ref={this.formRef}>
+      <form
+        data-testid="form"
+        action=""
+        onSubmit={this.handleSubmit}
+        className="form"
+        ref={this.formRef}
+      >
         <FormTextInput
           label="Item name"
           name="itemName"

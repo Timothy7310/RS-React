@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 describe('FormSelect component', () => {
-  it('render', async () => {
+  it('select option', async () => {
     const user = userEvent.setup();
     render(<FormSelect label="Rarity" name="rarity" id="formRarity" valid={false} />);
     const select = screen.getByLabelText('Rarity') as HTMLSelectElement;
