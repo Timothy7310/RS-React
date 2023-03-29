@@ -1,34 +1,38 @@
-import React from 'react';
+import { useState, useEffect, useRef, ChangeEvent } from 'react';
 import '../styles/blocks/search.scss';
-import { EmptyProps, SearchState } from 'types/types';
 
-class Search extends React.Component<EmptyProps, SearchState> {
-  constructor(props: EmptyProps) {
-    super(props);
+const Search = () => {
+  const [searchValue, setSearchValue] = useState(localStorage.getItem('searchValue') ?? '');
+  const searchInputRef = useRef<string>();
 
-    this.state = {
-      value: localStorage.getItem('searchValue') ?? '',
+  useEffect(() => {
+    searchInputRef.current = searchValue;
+  }, [searchValue]);
+
+  useEffect(() => {
+    return () => {
+      localStorage.setItem('searchValue', searchInputRef.current ?? '');
     };
-  }
+  }, []);
 
-  render() {
-    return (
-      <>
-        <input
-          type="search"
-          name="search"
-          className="goods-cards__head-search"
-          placeholder="Поиск по названию"
-          onChange={(e) => this.setState({ value: e.target.value })}
-          value={this.state.value}
-        />
-      </>
-    );
-  }
+  const handelChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setSearchValue(value);
+    searchInputRef.current = value;
+  };
 
-  componentWillUnmount() {
-    localStorage.setItem('searchValue', this.state.value);
-  }
-}
+  return (
+    <>
+      <input
+        type="search"
+        name="search"
+        className="goods-cards__head-search"
+        placeholder="Поиск по названию"
+        onChange={handelChange}
+        value={searchValue}
+      />
+    </>
+  );
+};
 
 export default Search;
