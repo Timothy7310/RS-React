@@ -1,4 +1,3 @@
-import React from 'react';
 import goods from '../assets/goods.json';
 import CardList from '../components/Card/CardList';
 import '../styles/blocks/goods.scss';

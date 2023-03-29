@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Header from '../components/Header';
 import { CurrentPageProps, FormCard } from '../types/types';
 import Form from '../components/Form/Form';
