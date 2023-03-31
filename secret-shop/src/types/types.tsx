@@ -1,3 +1,5 @@
+import { UseFormRegister, FieldValues, DeepMap, FieldError } from 'react-hook-form';
+
 type Card = {
   id: number;
   itemName: string;
@@ -8,9 +10,9 @@ type Card = {
   description: string;
   price: number;
   stock: number;
-  heroImage: string;
-  itemImage1: string;
-  itemImage2: string;
+  heroImage: string | FileList;
+  itemImage1: string | FileList;
+  itemImage2: string | FileList;
   videoLink: string;
   date: string;
   hasBuy: boolean;
@@ -31,20 +33,8 @@ type CardFormListProps = {
   cards: FormCard[];
 };
 
-type SearchState = {
-  value: string;
-};
-
-type EmptyProps = {
-  [key: string]: never;
-};
-
 type CurrentPageProps = {
   page: string;
-};
-
-type FormElementsProps = {
-  valid: boolean;
 };
 
 type FormCard = {
@@ -55,28 +45,76 @@ type FormProps = {
   cardValue: (card: FormCard) => void;
 };
 
-type FormTextInputProps = {
-  label: string;
+type FormErrorMessageProps = {
+  message: string;
+};
+
+type FieldErrors<TFieldValues extends FieldValues = FieldValues> = DeepMap<
+  TFieldValues,
+  FieldError
+>;
+
+type FormInputProps = {
   name: string;
   id: string;
+  label: string;
+  register: UseFormRegister<FieldValues>;
+  errors?: FieldErrors;
 };
 
-type FormState = {
-  itemName: { value: string; isError: boolean };
-  heroName: { value: string; isError: boolean };
-  date: { value: string; isError: boolean };
-  rarity: { value: string; isError: boolean };
-  hasBuy: { value: boolean; isError: boolean };
-  side: { value: string; isError: boolean };
-  itemImage1: { value: string; isError: boolean };
-  itemImage2: { value: string; isError: boolean };
-  heroImage: { value: string; isError: boolean };
-  price: { value: number; isError: boolean };
+type ValidationSchemaDateInput = {
+  validationSchema: {
+    required: string;
+    min: {
+      value: string;
+      message: string;
+    };
+    max: {
+      value: string;
+      message: string;
+    };
+  };
 };
 
-type FormErrorMessageProps = {
-  valid: boolean;
-  message: string;
+type ValidationSchemaFileInput = {
+  validationSchema: {
+    required: string;
+    validate: {
+      typeImg: (value: FileList) => boolean | string;
+    };
+  };
+};
+
+type ValidationSchemaNumberInput = {
+  validationSchema: {
+    required: string;
+    min: {
+      value: number;
+      message: string;
+    };
+  };
+};
+
+type ValidationSchemaRadio = {
+  validationSchema: {
+    required: string;
+  };
+};
+
+type ValidationSchemaSelect = {
+  validationSchema: {
+    required: string;
+  };
+};
+
+type ValidationSchemaTextInput = {
+  validationSchema: {
+    required: string;
+    minLength: {
+      value: number;
+      message: string;
+    };
+  };
 };
 
 export type {
@@ -84,14 +122,17 @@ export type {
   Cards,
   CardProps,
   CardListProps,
-  SearchState,
-  EmptyProps,
   CurrentPageProps,
-  FormElementsProps,
-  FormTextInputProps,
-  FormState,
   FormProps,
   CardFormListProps,
   FormErrorMessageProps,
   FormCard,
+  FieldErrors,
+  FormInputProps,
+  ValidationSchemaDateInput,
+  ValidationSchemaFileInput,
+  ValidationSchemaNumberInput,
+  ValidationSchemaRadio,
+  ValidationSchemaSelect,
+  ValidationSchemaTextInput,
 };

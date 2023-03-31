@@ -7,13 +7,17 @@ const CardItem = ({ card }: CardProps) => {
       className="goods-cards__item card"
       data-testid={card.itemName}
       style={{
-        backgroundImage: `url(${card.itemImage1 || card.itemImage2})`,
+        backgroundImage: `url(${window.URL.createObjectURL((card.itemImage1 as FileList)[0])})`,
       }}
     >
       <div className="card__date">{card.date}</div>
       <div className={`card__side card__side--${card.side}`}>{card.side}</div>
       <div className="card__hero hero">
-        <img src={card.heroImage as string} alt="" className="hero__avatar" />
+        <img
+          src={window.URL.createObjectURL((card.heroImage as FileList)[0])}
+          alt=""
+          className="hero__avatar"
+        />
         <span className={`hero__rareness ${card.rarity}`}>{card.rarity}</span>
         <span className="hero__name">{card.heroName}</span>
       </div>

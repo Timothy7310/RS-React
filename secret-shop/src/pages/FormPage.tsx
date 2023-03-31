@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import Header from '../components/Header';
 import { CurrentPageProps, FormCard } from '../types/types';
-import Form from '../components/Form/Form';
 import '../styles/blocks/form-page.scss';
 import CardFormList from '../components/Card/CardFormList';
+import Form from '../components/Form/Form';
 
 const FormPage = ({ page }: CurrentPageProps) => {
   const [cards, setCard] = useState<FormCard[]>([]);
