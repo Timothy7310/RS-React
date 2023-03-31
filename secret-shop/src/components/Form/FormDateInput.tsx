@@ -1,35 +1,28 @@
-import React from 'react';
-import { FormElementsProps, FormTextInputProps } from '../../types/types';
 import FormErrorMessage from './FormErrorMessage';
+import { FormInputProps, ValidationSchemaDateInput } from '../../types/types';
 
-class FormDateInput extends React.Component<FormElementsProps & FormTextInputProps> {
-  dateInputRef: React.RefObject<HTMLInputElement>;
-
-  constructor(props: FormElementsProps & FormTextInputProps) {
-    super(props);
-    this.dateInputRef = React.createRef();
-  }
-
-  render() {
-    return (
-      <div className="form__element-wrap">
-        <label htmlFor={this.props.id} className="form__element-label">
-          {this.props.label}
-        </label>
-        <input
-          type="date"
-          required
-          name={this.props.name}
-          ref={this.dateInputRef}
-          id={this.props.id}
-          min="2000-01-01"
-          max="2032-01-01"
-          className="form__element-input"
-        />
-        <FormErrorMessage valid={this.props.valid} message="Ops some mistake! try harder" />
-      </div>
-    );
-  }
-}
+const FormDateInput = ({
+  name,
+  id,
+  label,
+  register,
+  validationSchema,
+  errors,
+}: FormInputProps & ValidationSchemaDateInput) => {
+  return (
+    <div className="form__element-wrap">
+      <label htmlFor={id} className="form__element-label">
+        {label}
+      </label>
+      <input
+        type="date"
+        id={id}
+        className="form__element-input"
+        {...register(name, validationSchema)}
+      />
+      {errors?.[name] && <FormErrorMessage message={errors?.[name]?.message || 'Errors'} />}
+    </div>
+  );
+};
 
 export default FormDateInput;
