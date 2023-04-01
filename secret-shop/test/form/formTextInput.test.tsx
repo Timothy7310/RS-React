@@ -33,6 +33,11 @@ const FormTextInputWrap = () => {
 };
 
 describe('FormTextInput component', () => {
+  it('render', () => {
+    render(<FormTextInputWrap />);
+    const input = screen.getByLabelText('Item Name');
+    expect(input).toBeInTheDocument();
+  });
   it('typing', async () => {
     const user = userEvent.setup();
     render(<FormTextInputWrap />);
