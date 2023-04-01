@@ -5,7 +5,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 
-describe('FormSelect component', () => {
+describe('Form component', () => {
   it('render form elements', async () => {
     render(
       <Form

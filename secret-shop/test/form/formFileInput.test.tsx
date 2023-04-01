@@ -31,7 +31,7 @@ const FormFileInputWrap = () => {
   );
 };
 
-describe('FormSelect component', () => {
+describe('FormFileInput component', () => {
   it('render', () => {
     render(<FormFileInputWrap />);
     const fileInput = screen.getByLabelText('Item image');

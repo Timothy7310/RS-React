@@ -23,7 +23,7 @@ const FormRadioWrap = () => {
   );
 };
 
-describe('CardFormList component', () => {
+describe('FormRadio component', () => {
   it('render', () => {
     render(<FormRadioWrap />);
     const radio = screen.getByLabelText('radiant');

@@ -13,7 +13,7 @@ const FormCheckboxWrap = () => {
   return <FormCheckbox name="hasBuy" id="hasBuy" label="Buy button" register={register} />;
 };
 
-describe('CardFormList component', () => {
+describe('FormCheckbox component', () => {
   it('render', () => {
     render(<FormCheckboxWrap />);
     const checkbox = screen.getByLabelText('Buy button');

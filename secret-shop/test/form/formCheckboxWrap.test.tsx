@@ -4,7 +4,7 @@ import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-describe('CardFormList component', () => {
+describe('FormCheckboxWrap component', () => {
   it('render', () => {
     render(<FormChekboxWrap valid={false} message={''}></FormChekboxWrap>);
     const checkboxWrap = screen.getByText('Show Elements');
