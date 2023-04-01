@@ -26,6 +26,8 @@ describe('Form component', () => {
     const heroImage = screen.getByLabelText('Hero image');
     const priceInput = screen.getByLabelText('Price');
 
+    const form = screen.getByTestId('form');
+
     expect(submitButton).toBeInTheDocument();
     expect(itemNameInput).toBeInTheDocument();
     expect(heroNameInput).toBeInTheDocument();
@@ -37,6 +39,8 @@ describe('Form component', () => {
     expect(itemImage).toBeInTheDocument();
     expect(heroImage).toBeInTheDocument();
     expect(priceInput).toBeInTheDocument();
+
+    expect(form).toBeInTheDocument();
   });
 
   it('create card', async () => {
