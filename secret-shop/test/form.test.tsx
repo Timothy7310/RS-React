@@ -15,8 +15,8 @@ describe('FormSelect component', () => {
       />
     );
     const submitButton = screen.getByRole('button');
-    const itemNameInput = screen.getByLabelText('Item name');
-    const heroNameInput = screen.getByLabelText('Hero name');
+    const itemNameInput = screen.getByLabelText('Item Name');
+    const heroNameInput = screen.getByLabelText('Hero Name');
     const dateInput = screen.getByLabelText('Date of creation');
     const select = screen.getByLabelText('Rarity');
     const checkboxInput = screen.getByLabelText('Buy button');
@@ -51,8 +51,8 @@ describe('FormSelect component', () => {
     );
 
     const form = screen.getByTestId('form');
-    const itemNameInput = screen.getByLabelText('Item name');
-    const heroNameInput = screen.getByLabelText('Hero name');
+    const itemNameInput = screen.getByLabelText('Item Name');
+    const heroNameInput = screen.getByLabelText('Hero Name');
     const dateInput = screen.getByLabelText('Date of creation');
     const select = screen.getByLabelText('Rarity');
     const checkboxInput = screen.getByLabelText('Buy button');
