@@ -37,6 +37,11 @@ const FormDateInputWrap = () => {
 };
 
 describe('FormDateInput component', () => {
+  it('render', () => {
+    render(<FormDateInputWrap />);
+    const checkbox = screen.getByLabelText('Date of creation');
+    expect(checkbox).toBeInTheDocument();
+  });
   it('set date', async () => {
     const user = userEvent.setup();
     render(<FormDateInputWrap />);
