@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import FormFileInput from '../../src/components/form/FormFileInput';
 import { describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 const FormFileInputWrap = () => {
   const {
@@ -31,6 +32,11 @@ const FormFileInputWrap = () => {
 };
 
 describe('FormSelect component', () => {
+  it('render', () => {
+    render(<FormFileInputWrap />);
+    const fileInput = screen.getByLabelText('Item image');
+    expect(fileInput).toBeInTheDocument();
+  });
   it('load file', () => {
     render(<FormFileInputWrap />);
     const itemImage = new File(['arcana'], 'arcana.jpg', { type: 'image/jpg' });
