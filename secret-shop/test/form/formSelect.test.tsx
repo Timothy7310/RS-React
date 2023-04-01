@@ -4,6 +4,7 @@ import FormSelect from '../../src/components/form/FormSelect';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 const FormSelectWrap = () => {
   const {
@@ -28,6 +29,11 @@ const FormSelectWrap = () => {
 };
 
 describe('FormSelect component', () => {
+  it('render', () => {
+    render(<FormSelectWrap />);
+    const select = screen.getByLabelText('Rarity');
+    expect(select).toBeInTheDocument();
+  });
   it('select option', async () => {
     const user = userEvent.setup();
     render(<FormSelectWrap />);
