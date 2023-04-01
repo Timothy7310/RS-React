@@ -2,19 +2,26 @@ import { CardProps } from 'types/types';
 import '../../styles/blocks/card.scss';
 
 const CardItem = ({ card }: CardProps) => {
+  const getImageUrl = (img: string | FileList) => {
+    if (typeof img === 'string') {
+      return img;
+    }
+    return window.URL.createObjectURL((img as FileList)[0]);
+  };
+
   return (
     <li
       className="goods-cards__item card"
       data-testid={card.itemName}
       style={{
-        backgroundImage: `url(${window.URL.createObjectURL((card.itemImage1 as FileList)[0])})`,
+        backgroundImage: `url(${getImageUrl(card.itemImage1 as string | FileList)})`,
       }}
     >
       <div className="card__date">{card.date}</div>
       <div className={`card__side card__side--${card.side}`}>{card.side}</div>
       <div className="card__hero hero">
         <img
-          src={window.URL.createObjectURL((card.heroImage as FileList)[0])}
+          src={getImageUrl(card.heroImage as string | FileList)}
           alt=""
           className="hero__avatar"
         />
