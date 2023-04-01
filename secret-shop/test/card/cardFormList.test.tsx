@@ -1,5 +1,5 @@
 import React from 'react';
-import CardFormList from '../src/components/Card/CardFormList';
+import CardFormList from '../../src/components/Card/CardFormList';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import FormTextInput from '../src/components/form/FormTextInput';
+import FormTextInput from '../../src/components/form/FormTextInput';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';

@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from '../src/components/form/Form';
+import Form from '../../src/components/form/Form';
 import { describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
