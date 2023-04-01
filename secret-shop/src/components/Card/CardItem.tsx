@@ -14,7 +14,10 @@ const CardItem = ({ card }: CardProps) => {
       className="goods-cards__item card"
       data-testid={card.itemName}
       style={{
-        backgroundImage: `url(${getImageUrl(card.itemImage1 as string | FileList)})`,
+        backgroundImage: `url(${
+          getImageUrl(card.itemImage1 as string | FileList) ||
+          'https://thumbs.dreamstime.com/b/error-rubber-stamp-word-error-inside-illustration-109026446.jpg'
+        })`,
       }}
     >
       <div className="card__date">{card.date}</div>

@@ -52,6 +52,8 @@ describe('CardItem component', () => {
     render(<CardItem card={emptyFirstImg} />);
     const card = screen.getByTestId('Dark Behemoth');
     const cardBg = card.style['background-image'];
-    expect(cardBg).toBe(`url(${emptyFirstImg.itemImage2})`);
+    expect(cardBg).toBe(
+      `url(https://thumbs.dreamstime.com/b/error-rubber-stamp-word-error-inside-illustration-109026446.jpg)`
+    );
   });
 });
