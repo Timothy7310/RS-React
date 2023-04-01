@@ -4,6 +4,7 @@ import FormNumberInput from '../../src/components/form/FormNumberInput';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 const FormNumberInputWrap = () => {
   const {
@@ -33,6 +34,11 @@ const FormNumberInputWrap = () => {
 
 describe('FormNumberInput component', () => {
   it('render', async () => {
+    render(<FormNumberInputWrap />);
+    const checkbox = screen.getByLabelText('Price');
+    expect(checkbox).toBeInTheDocument();
+  });
+  it('set value', async () => {
     const user = userEvent.setup();
     render(<FormNumberInputWrap />);
     const input = screen.getByLabelText('Price') as HTMLInputElement;
