@@ -38,7 +38,7 @@ type CurrentPageProps = {
 };
 
 type FormCard = {
-  [k: string]: string | number | boolean;
+  [k: string]: string | number | boolean | FileList;
 };
 
 type FormProps = {

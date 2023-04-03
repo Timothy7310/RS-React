@@ -23,7 +23,9 @@ const Form = ({ cardValue }: FormProps) => {
   });
 
   const onSubmit = (data: FormCard) => {
-    cardValue(data);
+    const itemImageSrc = URL.createObjectURL((data.itemImage1 as FileList)[0]);
+    const heroImageSrc = URL.createObjectURL((data.heroImage as FileList)[0]);
+    cardValue({ ...data, itemImage1: itemImageSrc, heroImage: heroImageSrc });
     reset();
   };
 
