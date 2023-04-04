@@ -27,6 +27,7 @@ const Form = ({ cardValue }: FormProps) => {
     const heroImageSrc = URL.createObjectURL((data.heroImage as FileList)[0]);
     cardValue({ ...data, itemImage1: itemImageSrc, heroImage: heroImageSrc });
     reset();
+    alert('awesome card created');
   };
 
   return (
