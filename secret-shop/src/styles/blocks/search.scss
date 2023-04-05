@@ -5,4 +5,11 @@
     color: var(--color-white);
     padding: 0px 8px;
     height: 40px;
+    width: 100%;
+    &-wrap{
+        padding: 20px 25px;
+        background-color: var(--color-dark);
+        border-radius: 15px;
+        width: 100%;
+    }
 }

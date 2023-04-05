@@ -1,0 +1,27 @@
+.card-loader{
+    background-color: var(--color-dark);;
+    padding: 8px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    margin: 20px 0px;
+    align-items: center;
+    box-shadow: 0 0px 25px var(--color-accent);
+    border-radius: 10px;
+    &__text{
+        flex-grow: 1;
+        padding-left: 16px;
+    }
+    &__icon{
+        width: 80px;
+        fill: var(--color-white);
+        & .film {
+            animation: spin 3s ease-in-out infinite;
+		    transform-origin: center center;
+        }
+    }
+}
+@keyframes spin {
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
