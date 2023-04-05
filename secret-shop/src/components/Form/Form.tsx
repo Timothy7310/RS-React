@@ -23,9 +23,8 @@ const Form = ({ cardValue }: FormProps) => {
   });
 
   const onSubmit = (data: FormCard) => {
-    const itemImageSrc = URL.createObjectURL((data.itemImage1 as FileList)[0]);
-    const heroImageSrc = URL.createObjectURL((data.heroImage as FileList)[0]);
-    cardValue({ ...data, itemImage1: itemImageSrc, heroImage: heroImageSrc });
+    const posterImage = URL.createObjectURL((data.poster as unknown as FileList)[0]);
+    cardValue({ ...data, poster: posterImage });
     reset();
     alert('awesome card created');
   };
@@ -33,29 +32,15 @@ const Form = ({ cardValue }: FormProps) => {
   return (
     <form data-testid="form" action="" onSubmit={handleSubmit(onSubmit)} className="form">
       <FormTextInput
-        name="itemName"
+        name="name"
         id="itemName"
-        label="Item Name"
+        label="Film Name"
         register={register}
         validationSchema={{
           required: 'Required to fill in 👺',
           minLength: {
-            value: 10,
-            message: 'Minimum of 10 characters 💔',
-          },
-        }}
-        errors={errors}
-      />
-      <FormTextInput
-        name="heroName"
-        id="heroName"
-        label="Hero Name"
-        register={register}
-        validationSchema={{
-          required: 'Required to fill in 👺',
-          minLength: {
-            value: 2,
-            message: 'Minimum of 2 characters 💔',
+            value: 5,
+            message: 'Minimum of 5 characters 💔',
           },
         }}
         errors={errors}
@@ -79,9 +64,9 @@ const Form = ({ cardValue }: FormProps) => {
         errors={errors}
       />
       <FormSelect
-        name="rarity"
+        name="genre"
         id="formRarity"
-        label="Rarity"
+        label="Genres"
         register={register}
         validationSchema={{
           required: 'Required to fill in 👺',
@@ -89,18 +74,18 @@ const Form = ({ cardValue }: FormProps) => {
         errors={errors}
       />
       <FormChekboxWrap
-        valid={(errors?.hasBuy?.type ?? false) as boolean}
-        message={(errors.hasBuy?.message || 'Error') as string}
+        valid={(errors?.hasRating?.type ?? false) as boolean}
+        message={(errors.hasRating?.message || 'Error') as string}
       >
-        <FormCheckbox name="hasBuy" id="hasBuy" label="Buy button" register={register} />
+        <FormCheckbox name="hasRating" id="hasRating" label="Rating" register={register} />
       </FormChekboxWrap>
       <FormRadioWrap
         valid={(errors?.side?.type ?? false) as boolean}
         message={(errors.side?.message || 'Error') as string}
       >
         <FormRadio
-          name="side"
-          label="radiant"
+          name="typeWatch"
+          label="Will watch"
           id="sideRadiant"
           register={register}
           validationSchema={{
@@ -108,8 +93,8 @@ const Form = ({ cardValue }: FormProps) => {
           }}
         />
         <FormRadio
-          name="side"
-          label="dire"
+          name="typeWatch"
+          label="Watched"
           id="sideRadiant"
           register={register}
           validationSchema={{
@@ -118,8 +103,8 @@ const Form = ({ cardValue }: FormProps) => {
         />
       </FormRadioWrap>
       <FormFileInput
-        name="itemImage1"
-        label="Item image"
+        name="poster"
+        label="Poster Image"
         id="itemImage"
         register={register}
         validationSchema={{
@@ -131,30 +116,20 @@ const Form = ({ cardValue }: FormProps) => {
         }}
         errors={errors}
       />
-      <FormFileInput
-        name="heroImage"
-        label="Hero image"
-        id="heroImage"
-        register={register}
-        validationSchema={{
-          required: 'Required to fill in 👺',
-          validate: {
-            typeImg: (value) =>
-              (value.length > 0 && value[0].type.startsWith('image')) || 'Must be an image 🖼️',
-          },
-        }}
-        errors={errors}
-      />
       <FormNumberInput
-        name="price"
-        id="formItemPrice"
-        label="Price"
+        name="rating"
+        id="rating"
+        label="Rating"
         register={register}
         validationSchema={{
           required: 'Required to fill in 👺',
           min: {
             value: 1,
-            message: 'Must be greater than 0 💰',
+            message: 'Must be greater than 0',
+          },
+          max: {
+            value: 10,
+            message: 'Max rating is 10',
           },
         }}
         errors={errors}
