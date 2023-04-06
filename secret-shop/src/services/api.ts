@@ -19,4 +19,9 @@ const getTop250 = async () => {
   return response;
 };
 
-export { axiosInstance, searchMovie, getTop250 };
+const getMovieByID = async (id: string) => {
+  const response = await axiosInstance.get(`movie/${id}`);
+  return response;
+};
+
+export { axiosInstance, searchMovie, getTop250, getMovieByID };

@@ -43,6 +43,7 @@ type PersonsType = {
 type Card = {
   kinopoiskId: number;
   id: number;
+  ageRating: number;
   externalId: {
     tmdb: number;
     imdb: string;
@@ -227,6 +228,11 @@ type ValidationSchemaTextInput = {
   };
 };
 
+type CardModalProps = {
+  closeModal: (isOpen: boolean) => void;
+  movie: Card;
+};
+
 export type {
   Card,
   Cards,
@@ -246,4 +252,5 @@ export type {
   ValidationSchemaRadio,
   ValidationSchemaSelect,
   ValidationSchemaTextInput,
+  CardModalProps,
 };

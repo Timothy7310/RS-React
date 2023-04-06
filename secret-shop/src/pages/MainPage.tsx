@@ -3,7 +3,7 @@ import '../styles/blocks/goods.scss';
 import Header from '../components/Header';
 import { CurrentPageProps, Cards } from '../types/types';
 import { useState, useEffect } from 'react';
-import { axiosInstance, searchMovie, getTop250 } from '../services/api';
+import { searchMovie, getTop250 } from '../services/api';
 import CardLoader from '../components/Card/CardLoader';
 import Search from '../components/Search';
 
