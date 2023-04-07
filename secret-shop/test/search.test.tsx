@@ -7,7 +7,7 @@ import userEvent from '@testing-library/user-event';
 describe('Search component', () => {
   it('render with typing', async () => {
     const user = userEvent.setup();
-    render(<Search />);
+    render(<Search searchValue={(value) => console.log(value)} />);
     await user.type(screen.getByRole<HTMLInputElement>('searchbox'), 'Test message');
     expect(screen.getByRole<HTMLInputElement>('searchbox').value).toBe('Test message');
   });

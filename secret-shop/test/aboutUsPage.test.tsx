@@ -4,7 +4,6 @@ import { screen } from '@testing-library/dom';
 import { MemoryRouter } from 'react-router-dom';
 import App from '../src/App';
 import React from 'react';
-import '@testing-library/jest-dom';
 
 describe('AboutUsPage component', () => {
   it('render page', () => {

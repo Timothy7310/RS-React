@@ -2,7 +2,6 @@ import React from 'react';
 import Form from '../../src/components/Form/Form';
 import { describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 
 describe('Form component', () => {

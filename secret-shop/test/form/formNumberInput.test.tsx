@@ -4,7 +4,6 @@ import FormNumberInput from '../../src/components/form/FormNumberInput';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom';
 
 const FormNumberInputWrap = () => {
   const {
@@ -25,6 +24,10 @@ const FormNumberInputWrap = () => {
         min: {
           value: 1,
           message: 'Must be greater than 0 💰',
+        },
+        max: {
+          value: 10,
+          message: 'Max rating is 10',
         },
       }}
       errors={errors}

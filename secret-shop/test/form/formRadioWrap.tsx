@@ -1,8 +1,7 @@
 import React from 'react';
-import FormRadioWrap from '../../src/components/Form/FormRadioWrap';
+import FormRadioWrap from '../../src/components/form/FormRadioWrap';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
 describe('FormRadioWrap component', () => {
   it('render', () => {

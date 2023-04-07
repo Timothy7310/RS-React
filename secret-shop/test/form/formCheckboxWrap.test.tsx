@@ -1,8 +1,7 @@
 import React from 'react';
-import FormChekboxWrap from '../../src/components/Form/FormChekboxWrap';
+import FormChekboxWrap from '../../src/components/form/FormChekboxWrap';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
 describe('FormCheckboxWrap component', () => {
   it('render', () => {

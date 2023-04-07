@@ -1,9 +1,8 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import FormRadio from '../../src/components/Form/FormRadio';
+import FormRadio from '../../src/components/form/FormRadio';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
 const FormRadioWrap = () => {
   const { register } = useForm({

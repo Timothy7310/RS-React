@@ -1,9 +1,8 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import FormCheckbox from '../../src/components/Form/FormCheckbox';
+import FormCheckbox from '../../src/components/form/FormCheckbox';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
 const FormCheckboxWrap = () => {
   const { register } = useForm({
