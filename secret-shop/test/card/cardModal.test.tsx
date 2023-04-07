@@ -1,9 +1,11 @@
 import React from 'react';
-import CardItem from '../../src/components/Card/CardItem';
+import CardModal from '../../src/components/Card/CardModal';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
-const testData = {
+import { Card } from '../../src/types/types';
+
+const testMovie = {
   fees: {
     world: {
       value: 286801374,
@@ -1216,10 +1218,16 @@ const testData = {
   top10: null,
   top250: 1,
 };
-describe('CardItem component', () => {
-  it('render', () => {
-    render(<CardItem card={testData} />);
 
-    expect(screen.getByText('Зеленая миля'));
+describe('CardModal component', () => {
+  it('render', () => {
+    render(
+      <CardModal
+        movie={testMovie as unknown as Card}
+        closeModal={(isOpen) => console.log(isOpen)}
+      />
+    );
+
+    expect(screen.getByText('The Green Mile'));
   });
 });
