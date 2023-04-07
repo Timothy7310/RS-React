@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, useEffect } from 'react';
+import { useState, ChangeEvent } from 'react';
 import '../styles/blocks/search.scss';
 
 type SearchProps = {
@@ -8,10 +8,6 @@ type SearchProps = {
 const Search = ({ searchValue }: SearchProps) => {
   const [value, setValue] = useState(localStorage.getItem('searchValue') ?? '');
 
-  useEffect(() => {
-    searchValue(value);
-  }, [searchValue, value]);
-
   const handelChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setValue(value);
@@ -20,15 +16,27 @@ const Search = ({ searchValue }: SearchProps) => {
 
   return (
     <>
-      <div className="goods-cards__head-search-wrap">
-        <input
-          type="search"
-          name="search"
-          className="goods-cards__head-search"
-          placeholder="Поиск по названию"
-          onChange={handelChange}
-          value={value}
-        />
+      <div className="search-wrap">
+        <form
+          action=""
+          className="search-form"
+          onSubmit={(event) => {
+            event.preventDefault();
+            searchValue(value);
+          }}
+        >
+          <input
+            type="search"
+            name="search"
+            className="search-form__input"
+            placeholder="Поиск по названию"
+            onChange={handelChange}
+            value={value}
+          />
+          <button className="search-form__btn" type="submit">
+            Поиск
+          </button>
+        </form>
       </div>
     </>
   );
