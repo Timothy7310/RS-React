@@ -1,5 +1,5 @@
 import FormErrorMessage from './FormErrorMessage';
-import rarityOptions from '../../assets/rarityOptions';
+import genresOptions from '../../assets/rarityOptions';
 import { FormInputProps, ValidationSchemaSelect } from '../../types/types';
 
 const FormSelect = ({
@@ -19,7 +19,7 @@ const FormSelect = ({
         <option value="" hidden>
           Choose one
         </option>
-        {rarityOptions.map((x) => (
+        {genresOptions.map((x) => (
           <option key={x.id} value={x.name}>
             {x.name}
           </option>

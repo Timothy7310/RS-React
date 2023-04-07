@@ -1,12 +1,12 @@
 import React from 'react';
-import Form from '../../src/components/form/Form';
+import Form from '../../src/components/Form/Form';
 import { describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 
 describe('Form component', () => {
-  it('render form elements', async () => {
+  it('render form elements', () => {
     render(
       <Form
         cardValue={(value) => {
@@ -15,30 +15,26 @@ describe('Form component', () => {
       />
     );
     const submitButton = screen.getByRole('button');
-    const itemNameInput = screen.getByLabelText('Item Name');
-    const heroNameInput = screen.getByLabelText('Hero Name');
+    const filmNameInput = screen.getByLabelText('Film Name');
     const dateInput = screen.getByLabelText('Date of creation');
-    const select = screen.getByLabelText('Rarity');
-    const checkboxInput = screen.getByLabelText('Buy button');
-    const radiantRadiantSide = screen.getByLabelText('radiant');
-    const direRadiantSide = screen.getByLabelText('dire');
-    const itemImage = screen.getByLabelText('Item image');
-    const heroImage = screen.getByLabelText('Hero image');
-    const priceInput = screen.getByLabelText('Price');
+    const select = screen.getByLabelText('Genres');
+    const checkboxInput = screen.getByText('Rating');
+    const willWatchRadio = screen.getByLabelText('Will watch');
+    const watchedRadio = screen.getByLabelText('Watched');
+    const posterImage = screen.getByLabelText('Poster Image');
+    const ratingInput = screen.getByLabelText('Your Rating');
 
     const form = screen.getByTestId('form');
 
     expect(submitButton).toBeInTheDocument();
-    expect(itemNameInput).toBeInTheDocument();
-    expect(heroNameInput).toBeInTheDocument();
+    expect(filmNameInput).toBeInTheDocument();
     expect(dateInput).toBeInTheDocument();
     expect(select).toBeInTheDocument();
     expect(checkboxInput).toBeInTheDocument();
-    expect(radiantRadiantSide).toBeInTheDocument();
-    expect(direRadiantSide).toBeInTheDocument();
-    expect(itemImage).toBeInTheDocument();
-    expect(heroImage).toBeInTheDocument();
-    expect(priceInput).toBeInTheDocument();
+    expect(willWatchRadio).toBeInTheDocument();
+    expect(watchedRadio).toBeInTheDocument();
+    expect(posterImage).toBeInTheDocument();
+    expect(ratingInput).toBeInTheDocument();
 
     expect(form).toBeInTheDocument();
   });
@@ -55,28 +51,23 @@ describe('Form component', () => {
     );
 
     const form = screen.getByTestId('form');
-    const itemNameInput = screen.getByLabelText('Item Name');
-    const heroNameInput = screen.getByLabelText('Hero Name');
+    const filmNameInput = screen.getByLabelText('Film Name');
     const dateInput = screen.getByLabelText('Date of creation');
-    const select = screen.getByLabelText('Rarity');
-    const checkboxInput = screen.getByLabelText('Buy button');
-    const radiantRadiantSide = screen.getByLabelText('radiant');
-    const itemImage = screen.getByLabelText('Item image');
-    const heroImage = screen.getByLabelText('Hero image');
-    const priceInput = screen.getByLabelText('Price');
+    const select = screen.getByLabelText('Genres');
+    const checkboxInput = screen.getByText('Rating');
+    const willWatchRadio = screen.getByLabelText('Will watch');
+    const posterImage = screen.getByLabelText('Poster Image');
+    const ratingInput = screen.getByLabelText('Your Rating');
 
     const itemImageFile = new File(['arcana-io'], 'arcana-io.jpg', { type: 'image/jpg' });
-    const heroImageFile = new File(['io'], 'io.jpg', { type: 'image/jpg' });
 
-    fireEvent.change(itemNameInput, { target: { value: 'Io Arcana' } });
-    fireEvent.change(heroNameInput, { target: { value: 'Io' } });
+    fireEvent.change(filmNameInput, { target: { value: 'Io Arcana' } });
     fireEvent.change(dateInput, { target: { value: '2023-03-13' } });
-    await user.selectOptions(select, 'arcana');
+    await user.selectOptions(select, 'Action');
     fireEvent.click(checkboxInput);
-    fireEvent.click(radiantRadiantSide);
-    fireEvent.change(itemImage, { target: { files: [itemImageFile] } });
-    fireEvent.change(heroImage, { target: { files: [heroImageFile] } });
-    fireEvent.change(priceInput, { target: { value: 2100 } });
+    fireEvent.click(willWatchRadio);
+    fireEvent.change(posterImage, { target: { files: [itemImageFile] } });
+    fireEvent.change(ratingInput, { target: { value: 2100 } });
     fireEvent.submit(form);
   });
 });

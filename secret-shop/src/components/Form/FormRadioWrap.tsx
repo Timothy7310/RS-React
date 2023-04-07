@@ -11,7 +11,7 @@ const FormRadioWrap = ({
 >) => {
   return (
     <div className="checkboxs">
-      <span className="checkboxs-title">Choose side</span>
+      <span className="checkboxs-title">Watched?</span>
       <div className="checkboxs-wrap">{children}</div>
       {valid && <FormErrorMessage message={message} />}
     </div>

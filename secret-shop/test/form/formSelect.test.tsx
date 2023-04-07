@@ -38,7 +38,7 @@ describe('FormSelect component', () => {
     const user = userEvent.setup();
     render(<FormSelectWrap />);
     const select = screen.getByLabelText('Rarity') as HTMLSelectElement;
-    await user.selectOptions(select, 'arcana');
-    expect(select.value).toBe('arcana');
+    await user.selectOptions(select, 'Action');
+    expect(select.value).toBe('Action');
   });
 });

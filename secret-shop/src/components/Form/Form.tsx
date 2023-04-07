@@ -23,7 +23,7 @@ const Form = ({ cardValue }: FormProps) => {
   });
 
   const onSubmit = (data: FormCard) => {
-    const posterImage = URL.createObjectURL((data.poster as unknown as FileList)[0]);
+    const posterImage = URL.createObjectURL((data.poster as FileList)[0]);
     cardValue({ ...data, poster: posterImage });
     reset();
     alert('awesome card created');
@@ -119,7 +119,7 @@ const Form = ({ cardValue }: FormProps) => {
       <FormNumberInput
         name="rating"
         id="rating"
-        label="Rating"
+        label="Your Rating"
         register={register}
         validationSchema={{
           required: 'Required to fill in 👺',

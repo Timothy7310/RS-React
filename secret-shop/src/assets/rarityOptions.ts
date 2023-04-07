@@ -1,32 +1,36 @@
-const rarityOptions = [
+const genresOptions = [
   {
     id: 1,
-    name: 'common',
+    name: 'Action',
   },
   {
     id: 2,
-    name: 'uncommon',
+    name: 'Comedy',
   },
   {
     id: 3,
-    name: 'mythical',
+    name: 'Drama',
   },
   {
     id: 4,
-    name: 'rare',
+    name: 'Fantasy',
   },
   {
     id: 5,
-    name: 'immortal',
+    name: 'Horror',
   },
   {
     id: 6,
-    name: 'legendary',
+    name: 'Mystery',
   },
   {
     id: 7,
-    name: 'arcana',
+    name: 'Romance',
+  },
+  {
+    id: 8,
+    name: 'Thriller',
   },
 ];
 
-export default rarityOptions;
+export default genresOptions;
