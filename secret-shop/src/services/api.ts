@@ -3,7 +3,7 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 
 const axiosInstance = axios.create({
   baseURL: 'https://api.kinopoisk.dev/v1/',
-  timeout: 5000,
+  timeout: 6000,
   headers: {
     'X-API-KEY': API_KEY,
   },

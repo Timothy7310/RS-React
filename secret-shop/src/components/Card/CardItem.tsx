@@ -32,7 +32,7 @@ const CardItem = ({ card }: CardProps) => {
     : enableBodyScroll(document.body as HTMLElement);
 
   return (
-    <li className="card">
+    <li className="card" data-testid="card">
       <button className="card-wrap" data-move={card?.id} onClick={(event) => openModal(event)}>
         <div className="card-poster-wrap">
           {isLoading && <CardModalLoader />}
