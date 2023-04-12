@@ -12,14 +12,18 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.3",
+    "@types/react-redux": "^7.1.25",
     "axios": "^1.3.4",
     "body-scroll-lock": "^4.0.0-beta.0",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.8",
+    "react-redux": "^8.0.5",
     "react-router": "^6.8.2",
     "react-router-dom": "^6.9.0",
+    "redux": "^4.2.1",
     "sass": "^1.59.2"
   },
   "devDependencies": {
