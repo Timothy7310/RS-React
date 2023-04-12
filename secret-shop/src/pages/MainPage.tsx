@@ -6,16 +6,18 @@ import { useState, useEffect } from 'react';
 import { searchMovie, getTop250 } from '../services/api';
 import CardLoader from '../components/Card/CardLoader';
 import Search from '../components/Search';
+import { useAppSelector } from '../hooks/redux';
 
 const MainPage = ({ page }: CurrentPageProps) => {
+  const searchValue = useAppSelector((state) => state.searchSliceReducer.value);
+
   const [cards, setCards] = useState<Cards>([]);
   const [isLoad, setIsLoad] = useState(false);
-  const [searchValue, setSearchValue] = useState(localStorage.getItem('searchValue') ?? '');
 
   useEffect(() => {
     const getCards = async () => {
       try {
-        if (searchValue) {
+        if (searchValue.length > 0) {
           setIsLoad(false);
           const response = await searchMovie(searchValue);
           setCards([...response.data.docs]);
@@ -39,11 +41,7 @@ const MainPage = ({ page }: CurrentPageProps) => {
       <main>
         <div className="goods">
           <div className="goods__wrap container">
-            <Search
-              searchValue={(value) => {
-                setSearchValue(value ?? searchValue);
-              }}
-            />
+            <Search />
             {isLoad ? <CardList cards={cards} /> : <CardLoader />}
           </div>
         </div>
