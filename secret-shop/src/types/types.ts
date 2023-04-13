@@ -122,6 +122,10 @@ type Card = {
   lists: [];
 };
 
+type CardWrapper = {
+  docs: Card[];
+};
+
 type Cards = Card[];
 
 type CardProps = {
@@ -253,4 +257,5 @@ export type {
   ValidationSchemaSelect,
   ValidationSchemaTextInput,
   CardModalProps,
+  CardWrapper,
 };

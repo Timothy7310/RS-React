@@ -1,31 +1,41 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CardProps } from 'types/types';
 import '../../styles/blocks/card.scss';
 import { getRatingClassName } from '../../helper/helper';
-import { getMovieByID } from '../../services/api';
 import { Card } from 'types/types';
 import CardModal from './CardModal';
 import CardModalLoader from './CardModalLoader';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { movieAPI } from '../../services/MovieService';
 
 const CardItem = ({ card }: CardProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [movieData, setMovieData] = useState<Card | Record<string, never>>({});
   const [isLoading, setIsLoading] = useState(false);
+  const [id, setID] = useState('');
+  const { data: movie, isLoading: isLoadingMovie, isError } = movieAPI.useFetchMovieQuery(id);
 
   const openModal = async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
     const target = event.currentTarget as HTMLElement;
     const id = target.dataset?.move as string;
-    setIsLoading(true);
-    const movie = await getMovieByID(id);
-    setMovieData({ ...movie.data });
-    setIsLoading(false);
-    setIsOpen(true);
+
+    setID(id);
   };
 
   // HI :) this is only used to disable scrolling,
   // if you don't like using DOM, then write I will delete this section of code
+
+  useEffect(() => {
+    if (id !== '') {
+      setIsLoading(isLoadingMovie);
+      setIsOpen(!isLoadingMovie);
+      if (movie) {
+        setMovieData({ ...movie });
+        setID('');
+      }
+    }
+  }, [id, isError, isLoadingMovie, movie]);
 
   isOpen
     ? disableBodyScroll(document.body as HTMLElement)
