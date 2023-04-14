@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { FormProps, FormCard } from '../../types/types';
+import { FormCard } from '../../types/types';
 import FormTextInput from './FormTextInput';
 import FormDateInput from './FormDateInput';
 import FormSelect from './FormSelect';
@@ -9,10 +9,13 @@ import FormRadioWrap from './FormRadioWrap';
 import FormCheckbox from './FormCheckbox';
 import FormRadio from './FormRadio';
 import FormFileInput from './FormFileInput';
+import { useAppDispatch } from '../../hooks/redux';
+import { formSlice } from '../../redux/reducers/FormReducer';
 
 import '../../styles/blocks/form.scss';
 
-const Form = ({ cardValue }: FormProps) => {
+const Form = () => {
+  const dispatch = useAppDispatch();
   const {
     register,
     formState: { errors },
@@ -24,7 +27,7 @@ const Form = ({ cardValue }: FormProps) => {
 
   const onSubmit = (data: FormCard) => {
     const posterImage = URL.createObjectURL((data.poster as FileList)[0]);
-    cardValue({ ...data, poster: posterImage });
+    dispatch(formSlice.actions.createCard({ ...data, poster: posterImage }));
     reset();
     alert('awesome card created');
   };
@@ -45,24 +48,6 @@ const Form = ({ cardValue }: FormProps) => {
         }}
         errors={errors}
       />
-      <FormDateInput
-        name="date"
-        id="formDate"
-        label="Date of creation"
-        register={register}
-        validationSchema={{
-          required: 'Required to fill in 👺',
-          min: {
-            value: '2000-01-01',
-            message: 'Not before 2000-01-01 🕒',
-          },
-          max: {
-            value: '2032-01-01',
-            message: 'No later than 2023-01-01 🕒',
-          },
-        }}
-        errors={errors}
-      />
       <FormSelect
         name="genre"
         id="formRarity"
@@ -73,15 +58,9 @@ const Form = ({ cardValue }: FormProps) => {
         }}
         errors={errors}
       />
-      <FormChekboxWrap
-        valid={(errors?.hasRating?.type ?? false) as boolean}
-        message={(errors.hasRating?.message || 'Error') as string}
-      >
-        <FormCheckbox name="hasRating" id="hasRating" label="Rating" register={register} />
-      </FormChekboxWrap>
       <FormRadioWrap
-        valid={(errors?.side?.type ?? false) as boolean}
-        message={(errors.side?.message || 'Error') as string}
+        valid={(errors?.typeWatch?.type ?? false) as boolean}
+        message={(errors.typeWatch?.message || 'Error') as string}
       >
         <FormRadio
           name="typeWatch"
@@ -102,6 +81,30 @@ const Form = ({ cardValue }: FormProps) => {
           }}
         />
       </FormRadioWrap>
+      <FormChekboxWrap
+        valid={(errors?.hasRating?.type ?? false) as boolean}
+        message={(errors.hasRating?.message || 'Error') as string}
+      >
+        <FormCheckbox name="hasRating" id="hasRating" label="Rating" register={register} />
+      </FormChekboxWrap>
+      <FormDateInput
+        name="date"
+        id="formDate"
+        label="Date of creation"
+        register={register}
+        validationSchema={{
+          required: 'Required to fill in 👺',
+          min: {
+            value: '2000-01-01',
+            message: 'Not before 2000-01-01 🕒',
+          },
+          max: {
+            value: '2032-01-01',
+            message: 'No later than 2023-01-01 🕒',
+          },
+        }}
+        errors={errors}
+      />
       <FormFileInput
         name="poster"
         label="Poster Image"

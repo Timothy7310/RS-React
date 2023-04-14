@@ -1,10 +1,12 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { searchSliceReducer } from './reducers/SearchReducer';
 import { movieAPI } from '../services/MovieService';
+import { formSliceReducer } from './reducers/FormReducer';
 
 const rootReducer = combineReducers({
   searchSliceReducer,
   [movieAPI.reducerPath]: movieAPI.reducer,
+  formSliceReducer,
 });
 
 export const setupStore = () => {

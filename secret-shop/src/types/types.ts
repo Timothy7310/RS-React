@@ -152,10 +152,6 @@ type FormCard = {
   [k: string]: string | number | boolean | FileList;
 };
 
-type FormProps = {
-  cardValue: (card: FormCard) => void;
-};
-
 type FormErrorMessageProps = {
   message: string;
 };
@@ -244,7 +240,6 @@ export type {
   CardFormProps,
   CardListProps,
   CurrentPageProps,
-  FormProps,
   CardFormListProps,
   FormErrorMessageProps,
   FormCard,

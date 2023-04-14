@@ -5,7 +5,7 @@ import { getRatingClassName } from '../../helper/helper';
 const CardFormItem = ({ card }: CardFormProps) => {
   return (
     <li className="card">
-      <div className="card-img-wrap">
+      <div className="card-poster-wrap">
         <img className="card-poster" src={card.poster as string} />
         {(card.hasRating as boolean) && (
           <span className={`card-rating ${getRatingClassName(Number(card.rating))}`}>
