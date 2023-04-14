@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import FormRadio from '../../src/components/form/FormRadio';
+import FormRadio from '../../src/components/Form/FormRadio';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 

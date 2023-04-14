@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import FormFileInput from '../../src/components/form/FormFileInput';
+import FormFileInput from '../../src/components/Form/FormFileInput';
 import { describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 

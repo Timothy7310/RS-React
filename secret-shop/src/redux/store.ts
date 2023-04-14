@@ -3,7 +3,7 @@ import { searchSliceReducer } from './reducers/SearchReducer';
 import { movieAPI } from '../services/MovieService';
 import { formSliceReducer } from './reducers/FormReducer';
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   searchSliceReducer,
   [movieAPI.reducerPath]: movieAPI.reducer,
   formSliceReducer,

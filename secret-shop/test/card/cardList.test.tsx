@@ -1,15 +1,15 @@
 import React from 'react';
 import CardList from '../../src/components/Card/CardList';
 import { describe, it } from 'vitest';
-import { render } from '@testing-library/react';
-import goods from '../../src/assets/goods.json';
+import renderWithProviders from '../../src/helper/testWithStore';
+import { movieResult } from '../../src/mocks/data';
 
 describe('CardList component', () => {
   it('render', () => {
-    render(<CardList cards={goods} />);
+    renderWithProviders(<CardList cards={movieResult} />);
   });
 
   it('render empty', () => {
-    render(<CardList cards={[]} />);
+    renderWithProviders(<CardList cards={[]} />);
   });
 });

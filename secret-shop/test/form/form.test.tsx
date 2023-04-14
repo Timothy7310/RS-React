@@ -1,18 +1,13 @@
 import React from 'react';
 import Form from '../../src/components/Form/Form';
 import { describe, it, expect } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import renderWithProviders from '../../src/helper/testWithStore';
 
 describe('Form component', () => {
   it('render form elements', () => {
-    render(
-      <Form
-        cardValue={(value) => {
-          console.log(value);
-        }}
-      />
-    );
+    renderWithProviders(<Form />);
     const submitButton = screen.getByRole('button');
     const filmNameInput = screen.getByLabelText('Film Name');
     const dateInput = screen.getByLabelText('Date of creation');
@@ -41,13 +36,7 @@ describe('Form component', () => {
   it('create card', async () => {
     const user = userEvent.setup();
 
-    render(
-      <Form
-        cardValue={(value) => {
-          console.log(value);
-        }}
-      />
-    );
+    renderWithProviders(<Form />);
 
     const form = screen.getByTestId('form');
     const filmNameInput = screen.getByLabelText('Film Name');
