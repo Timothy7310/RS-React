@@ -1,11 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
 import { CardWrapper, Card } from '../types/types';
+import fetch from 'isomorphic-fetch';
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 export const movieAPI = createApi({
   reducerPath: 'movieAPI',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://api.kinopoisk.dev/v1/',
+    fetchFn: fetch,
     headers: { 'X-API-KEY': API_KEY },
   }),
   endpoints: (build) => ({

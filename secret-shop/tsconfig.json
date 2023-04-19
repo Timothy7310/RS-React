@@ -17,9 +17,12 @@
     "baseUrl": "./src",
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
   },
-  "include": ["./src/**/*", "styled.d.ts"],
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["./src/**/*", "styled.d.ts", "server.ts"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "types": ["node", "jest", "@testing-library/jest-dom"],
 }

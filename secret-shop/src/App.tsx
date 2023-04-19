@@ -10,6 +10,7 @@ import './styles/fonts.scss';
 import './styles/vendor.scss';
 import './styles/vars.scss';
 import './styles/settings.scss';
+import './styles/blocks/search.scss';
 
 const App = () => {
   return (
