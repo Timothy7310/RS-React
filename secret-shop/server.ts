@@ -33,7 +33,7 @@ app.use('*', async (req, res) => {
   try {
     const url = req.originalUrl.replace(base, '');
 
-    let template;
+    let template: string;
     let render;
     if (!isProduction) {
       template = await fs.readFile('./index.html', 'utf-8');
