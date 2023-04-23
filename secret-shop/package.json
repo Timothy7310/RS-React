@@ -12,7 +12,6 @@
     "build:client": "vite build --ssrManifest --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
     "preview": "cross-env NODE_ENV=production node server",
-
     "start": "vite",
     "test:cypress-open": "cypress open --e2e --browser chrome",
     "test:cypress-run": "cypress run --e2e",
@@ -37,6 +36,7 @@
     "react-router-dom": "^6.9.0",
     "redux": "^4.2.1",
     "sass": "^1.59.2",
+    "serialize-javascript": "^6.0.1",
     "sirv": "^2.0.2"
   },
   "devDependencies": {
@@ -51,6 +51,7 @@
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@types/serialize-javascript": "^5.0.2",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",
     "@vitejs/plugin-react": "^3.1.0",
