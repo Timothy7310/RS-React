@@ -15,7 +15,7 @@
     "start": "vite",
     "test:cypress-open": "cypress open --e2e --browser chrome",
     "test:cypress-run": "cypress run --e2e",
-    "test:cypress": "start-server-and-test start http-get://localhost:3000 test:cypress-open",
+    "test:cypress": "start-server-and-test dev http-get://localhost:3000 test:cypress-open",
     "coverage:cypress": "npx nyc report && npx nyc report --reporter=text-summary"
   },
   "dependencies": {
