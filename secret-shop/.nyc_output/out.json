@@ -20378,7 +20378,7 @@
           "column": 26
         },
         "end": {
-          "line": 15,
+          "line": 16,
           "column": 1
         }
       },
@@ -20388,7 +20388,7 @@
           "column": 2
         },
         "end": {
-          "line": 14,
+          "line": 15,
           "column": 5
         }
       },
@@ -20419,10 +20419,10 @@
         "loc": {
           "start": {
             "line": 10,
-            "column": 32
+            "column": 46
           },
           "end": {
-            "line": 15,
+            "line": 16,
             "column": 1
           }
         },
@@ -20470,11 +20470,11 @@
       "sources": [
         "C:/FRONT/RS-React/secret-shop/src/redux/store.ts"
       ],
-      "mappings": "AAAA,SAAS,iBAAiB,sBAAsB;AAChD,SAAS,0BAA0B;AACnC,SAAS,gBAAgB;AACzB,SAAS,wBAAwB;AAE1B,aAAM,cAAc,gBAAgB;AAAA,EACzC;AAAA,EACA,CAAC,SAAS,WAAW,GAAG,SAAS;AAAA,EACjC;AACF,CAAC;AAEM,aAAM,aAAa,MAAM;AAC9B,SAAO,eAAe;AAAA,IACpB,SAAS;AAAA,IACT,YAAY,CAAC,yBAAyB,qBAAqB,EAAE,OAAO,SAAS,UAAU;AAAA,EACzF,CAAC;AACH;",
+      "mappings": "AAAA,SAAS,iBAAiB,sBAAsC;AAChE,SAAS,0BAA0B;AACnC,SAAS,gBAAgB;AACzB,SAAS,wBAAwB;AAE1B,aAAM,cAAc,gBAAgB;AAAA,EACzC;AAAA,EACA,CAAC,SAAS,WAAW,GAAG,SAAS;AAAA,EACjC;AACF,CAAC;AAEM,aAAM,aAAa,CAAC,mBAA+C;AACxE,SAAO,eAAe;AAAA,IACpB,SAAS;AAAA,IACT,YAAY,CAAC,yBAAyB,qBAAqB,EAAE,OAAO,SAAS,UAAU;AAAA,IACvF;AAAA,EACF,CAAC;AACH;",
       "names": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "9864e20936b2fd55ccf2f842c25fbb15f65b9361"
+    "hash": "0282f2f1f3b5bb5d4f254e22c3da28793d51dcbe"
   },
   "C:/FRONT/RS-React/secret-shop/src/entry-client.tsx": {
     "path": "C:/FRONT/RS-React/secret-shop/src/entry-client.tsx",
@@ -20486,7 +20486,7 @@
         },
         "end": {
           "line": 7,
-          "column": 26
+          "column": 52
         }
       },
       "1": {
@@ -20495,7 +20495,17 @@
           "column": 0
         },
         "end": {
-          "line": 20,
+          "line": 8,
+          "column": 34
+        }
+      },
+      "2": {
+        "start": {
+          "line": 9,
+          "column": 0
+        },
+        "end": {
+          "line": 21,
           "column": 10
         }
       }
@@ -20504,13 +20514,14 @@
     "branchMap": {},
     "s": {
       "0": 1,
-      "1": 1
+      "1": 1,
+      "2": 1
     },
     "f": {},
     "b": {},
     "inputSourceMap": {
       "version": 3,
-      "mappings": "AAYM;AAZN,OAAOA,cAAc;AACrB,OAAOC,SAAS;AAChB,SAASC,qBAAqB;AAC9B,SAASC,gBAAgB;AACzB,SAASC,kBAAkB;AAE3B,MAAMC,QAAQD,WAAU;AAExBJ,SAASM,YACPC,SAASC,eAAe,MAAM,GAC9B,uBAAC,iBACC,iCAAC,YAAS,OACR,iCAAC,SAAD;AAAA;AAAA;AAAA;AAAA,OAAI,KADN;AAAA;AAAA;AAAA;AAAA,OAEA,KAHF;AAAA;AAAA;AAAA;AAAA,OAIA,CAAgB",
+      "mappings": "AAsBM;AAtBN,OAAOA,cAAc;AACrB,OAAOC,SAAS;AAChB,SAASC,qBAAqB;AAC9B,SAASC,gBAAgB;AACzB,SAASC,kBAA6B;AAWtC,MAAMC,QAAQD,WAAWE,OAAOC,mBAAmB;AACnD,OAAOD,OAAOC;AAEdP,SAASQ,YACPC,SAASC,eAAe,MAAM,GAC9B,uBAAC,iBACC,iCAAC,YAAS,OACR,iCAAC,SAAD;AAAA;AAAA;AAAA;AAAA,OAAI,KADN;AAAA;AAAA;AAAA;AAAA,OAEA,KAHF;AAAA;AAAA;AAAA;AAAA,OAIA,CAAgB",
       "names": [
         "ReactDOM",
         "App",
@@ -20518,6 +20529,8 @@
         "Provider",
         "setupStore",
         "store",
+        "window",
+        "__PRELOADED_STATE__",
         "hydrateRoot",
         "document",
         "getElementById"
@@ -20528,6 +20541,6 @@
       "file": "C:/FRONT/RS-React/secret-shop/src/entry-client.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "c5922998883e5c6c5ab0dd8fafcbabfc114a4ca5"
+    "hash": "83c335ea758289e2737c1bc37b1254703c8dd9b3"
   }
 }
