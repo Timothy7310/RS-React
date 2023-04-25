@@ -12,8 +12,7 @@
       "browser": true,
       "es6": true,
       "jest": true,
-      "node": true,
-      "cypress/globals": true
+      "node": true
     },
     "root": true,
     "parserOptions": {
@@ -24,7 +23,7 @@
           "sourceType": "module"
     },
     "plugins": [
-      "@typescript-eslint", "react", "prettier", "react-hooks", "cypress"
+      "@typescript-eslint", "react", "prettier", "react-hooks"
     ],
     "rules": {
       "react-hooks/rules-of-hooks": "error",
