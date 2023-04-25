@@ -15,8 +15,8 @@ export const movieAPI = createApi({
       query: (limit = 12, page = 1) => ({
         url: '/movie',
         params: {
-          _limit: limit,
-          _page: page,
+          limit: limit,
+          page: page,
           top250: '!null',
         },
       }),
@@ -25,8 +25,8 @@ export const movieAPI = createApi({
       query: (searchValue, limit = 12, page = 1) => ({
         url: '/movie',
         params: {
-          _limit: limit,
-          _page: page,
+          limit: limit,
+          page: page,
           name: searchValue,
         },
       }),

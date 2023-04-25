@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">19.04% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/21</span>
+                <span class='fraction'>21/21</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.52% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/17</span>
+                <span class='fraction'>17/17</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -123,33 +123,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">75x</span>
+<span class="cline-any cline-yes">210x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">75x</span>
+<span class="cline-any cline-yes">75x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">75x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">75x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">75x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">75x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -160,9 +158,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import CardList from '../components/Card/CardList';
 import '../styles/blocks/goods.scss';
 import Header from '../components/Header';
@@ -173,31 +173,31 @@ import Search from '../components/Search';
 import { useAppSelector } from '../hooks/redux';
 import { movieAPI } from '../services/MovieService';
 &nbsp;
-const MainPage<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > = <span class="fstat-no" title="function not covered" >(</span>{</span> page }: CurrentPageProps) =&gt; <span class="cstat-no" title="statement not covered" >{</span></span>
-  const searchValue = <span class="cstat-no" title="statement not covered" >useAppSelector((<span class="fstat-no" title="function not covered" >state) =&gt; <span class="cstat-no" title="statement not covered" >s</span>tate.searchSliceReducer.value)</span>;</span>
+const MainPage = ({ page }: CurrentPageProps) =&gt; {
+  const searchValue = useAppSelector((state) =&gt; state.searchSliceReducer.value);
 &nbsp;
-  const [cards, setCards] = <span class="cstat-no" title="statement not covered" >useState&lt;Cards&gt;([]);</span>
-  const [isLoad, setIsLoad] = <span class="cstat-no" title="statement not covered" >useState(false);</span>
+  const [cards, setCards] = useState&lt;Cards&gt;([]);
+  const [isLoad, setIsLoad] = useState(false);
 &nbsp;
-  const { data: moviesTop250, isFetching: isFetchingTop } = <span class="cstat-no" title="statement not covered" >movieAPI.useFetchTop250Query(12);</span>
+  const { data: moviesTop250, isFetching: isFetchingTop } = movieAPI.useFetchTop250Query(12);
   const { data: movieSearch, isFetching: isFetchingSearch } =
-<span class="cstat-no" title="statement not covered" >    movieAPI.useFetchSearchMovieQuery(searchValue);</span>
+    movieAPI.useFetchSearchMovieQuery(searchValue);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
-<span class="cstat-no" title="statement not covered" >    if (searchValue.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >      setIsLoad(!isFetchingTop);</span>
-<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (moviesTop250) {</span>
-<span class="cstat-no" title="statement not covered" >        setCards([...moviesTop250.docs]);</span>
+  useEffect(() =&gt; {
+    if (searchValue.length === 0) {
+      setIsLoad(!isFetchingTop);
+      if (moviesTop250) {
+        setCards([...moviesTop250.docs]);
       }
     } else {
-<span class="cstat-no" title="statement not covered" >      setIsLoad(!isFetchingSearch);</span>
-<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (movieSearch) {</span>
-<span class="cstat-no" title="statement not covered" >        setCards([...movieSearch.docs]);</span>
+      setIsLoad(!isFetchingSearch);
+      if (movieSearch) {
+        setCards([...movieSearch.docs]);
       }
     }
   }, [searchValue, movieSearch, moviesTop250, isFetchingTop, isFetchingSearch]);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;&gt;
       &lt;Header page={page} /&gt;
       &lt;main&gt;
@@ -220,7 +220,7 @@ export default MainPage;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-25T10:52:39.661Z
+                at 2023-04-25T11:33:30.368Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

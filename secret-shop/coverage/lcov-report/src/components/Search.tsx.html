@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.22% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/18</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">28.57% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -111,28 +111,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">123x</span>
+<span class="cline-any cline-yes">123x</span>
+<span class="cline-any cline-yes">243x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">123x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">123x</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">123x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">123x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -146,34 +144,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState, ChangeEvent, FormEvent } from 'react';
 import '../styles/blocks/search.scss';
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import { searchSlice } from '../redux/reducers/SearchReducer';
 &nbsp;
-const Search<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > = <span class="fstat-no" title="function not covered" >(</span>) =&gt; <span class="cstat-no" title="statement not covered" >{</span></span></span>
-  const dispatch = <span class="cstat-no" title="statement not covered" >useAppDispatch();</span>
-  const reduxValue = <span class="cstat-no" title="statement not covered" >useAppSelector((<span class="fstat-no" title="function not covered" >state) =&gt; <span class="cstat-no" title="statement not covered" >s</span>tate.searchSliceReducer.value)</span>;</span>
+const Search = () =&gt; {
+  const dispatch = useAppDispatch();
+  const reduxValue = useAppSelector((state) =&gt; state.searchSliceReducer.value);
 &nbsp;
-  const [value, setValue] = <span class="cstat-no" title="statement not covered" >useState(reduxValue ?? '');</span>
+  const [value, setValue] = useState(reduxValue ?? <span class="branch-1 cbranch-no" title="branch not covered" >'')</span>;
 &nbsp;
-  const handelChange = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>vent: ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {</span>
-    const value = <span class="cstat-no" title="statement not covered" >event.target.value;</span>
-<span class="cstat-no" title="statement not covered" >    setValue(value);</span>
+  const handelChange = (event: ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
+    const value = event.target.value;
+    setValue(value);
   };
 &nbsp;
-  const handelSubmit = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>vent: FormEvent&lt;HTMLFormElement&gt;) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    event.preventDefault();</span>
-<span class="cstat-no" title="statement not covered" >    dispatch(searchSlice.actions.typing(value));</span>
+  const handelSubmit = (event: FormEvent&lt;HTMLFormElement&gt;) =&gt; {
+    event.preventDefault();
+    dispatch(searchSlice.actions.typing(value));
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;&gt;
       &lt;div className="search-wrap"&gt;
-        &lt;form action="" className="search-form" onSubmit={(<span class="fstat-no" title="function not covered" >event) =&gt; <span class="cstat-no" title="statement not covered" >h</span>andelSubmit(event)}&gt;</span>
+        &lt;form action="" className="search-form" onSubmit={(event) =&gt; handelSubmit(event)}&gt;
           &lt;input
             type="search"
             name="search"
@@ -199,7 +199,7 @@ export default Search;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-25T10:52:39.661Z
+                at 2023-04-25T11:33:30.368Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

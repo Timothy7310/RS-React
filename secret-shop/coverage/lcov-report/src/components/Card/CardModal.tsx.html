@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/10</span>
+                <span class='fraction'>9/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">14.28% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">14.28% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/7</span>
+                <span class='fraction'>6/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/10</span>
+                <span class='fraction'>9/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -122,16 +122,15 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">21x</span>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">91x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -159,17 +158,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">696x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -178,18 +174,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import '../../styles/blocks/modal.scss';
 import { CardModalProps } from '../../types/types';
 &nbsp;
-const CardModal = <span class="fstat-no" title="function not covered" >({</span> movie, closeModal }: CardModalProps) =&gt; {
-<span class="cstat-no" title="statement not covered" >  return (</span>
+const CardModal = ({ movie, closeModal }: CardModalProps) =&gt; {
+  return (
     &lt;div className="modal"&gt;
       &lt;div className="modal-overlay" onClick={<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >c</span>loseModal(false)}&gt;&lt;</span>/div&gt;
       &lt;div className="modal-content"&gt;
-        &lt;button className="modal-close" aria-label="close" onClick={<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >c</span>loseModal(false)}&gt;</span>
+        &lt;button className="modal-close" aria-label="close" onClick={() =&gt; closeModal(false)}&gt;
           &lt;span className="modal-close--span"&gt;&lt;/span&gt;
           &lt;span className="modal-close--span"&gt;&lt;/span&gt;
         &lt;/button&gt;
@@ -218,13 +218,13 @@ const CardModal = <span class="fstat-no" title="function not covered" >({</span>
             Длительность: {movie?.movieLength} мин.
           &lt;/span&gt;
           &lt;span className="modal-info__item modal-info__item"&gt;
-            Жанры: {movie?.genres?.map((<span class="fstat-no" title="function not covered" >x) =&gt; <span class="cstat-no" title="statement not covered" >x</span>.name)</span>.join(', ')}
+            Жанры: {movie?.genres?.map((x) =&gt; x.name).join(', ')}
           &lt;/span&gt;
           &lt;span className="modal-info__item"&gt;
-            Актеры: {movie?.persons?.map((<span class="fstat-no" title="function not covered" >x) =&gt; <span class="cstat-no" title="statement not covered" >x</span>.name)</span>.join(', ')}
+            Актеры: {movie?.persons?.map((x) =&gt; x.name).join(', ')}
           &lt;/span&gt;
           &lt;span className="modal-info__item"&gt;
-            Страна: {movie?.countries?.map((<span class="fstat-no" title="function not covered" >x) =&gt; <span class="cstat-no" title="statement not covered" >x</span>.name)</span>.join(', ')}
+            Страна: {movie?.countries?.map((x) =&gt; x.name).join(', ')}
           &lt;/span&gt;
         &lt;/div&gt;
         {Boolean(movie?.description) &amp;&amp; (
@@ -247,7 +247,7 @@ export default CardModal;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-25T10:52:39.661Z
+                at 2023-04-25T11:33:30.368Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
