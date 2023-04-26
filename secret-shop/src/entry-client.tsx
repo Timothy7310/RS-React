@@ -5,8 +5,6 @@ import { Provider } from 'react-redux';
 import { setupStore, RootState } from './redux/store';
 import { PreloadedState } from '@reduxjs/toolkit';
 
-// const store = setupStore();
-
 declare global {
   interface Window {
     __PRELOADED_STATE__?: PreloadedState<RootState>;
