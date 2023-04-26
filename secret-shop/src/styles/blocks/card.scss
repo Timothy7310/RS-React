@@ -1,0 +1,88 @@
+.card{
+    border-radius: 5px;
+    transition: border 0.25s ease-in-out;
+    border: 1px solid transparent;
+    &:hover{
+        border: 1px solid var(--color-secondary);
+    }
+    &-wrap{
+        background-color: transparent;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 0;
+        gap: 10px;
+        height: 100%;
+        padding-bottom: 10px;
+    }
+    &-bottom{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%;
+    }
+    &-poster{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        &-wrap{
+            position: relative;
+            aspect-ratio: 8 / 12;
+        }
+    }
+    &-rating{
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        min-width: 38px;
+        font-size: 15px;
+        line-height: 24px;
+        font-weight: 600;
+        text-align: center;
+        background-color: var(--color-accent);
+        &--bad{
+            background-color: var(--bad-rating);
+        }
+        &--medium{
+            background-color: var(--medium-rating);
+        }
+        &--good{
+            background-color: var(--good-rating);
+        }
+        &--excellent{
+            background: var(--excellent-rating);
+            color: #000;
+        }
+    }
+    &-name{
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0px 10px;
+        color: var(--color-white);
+        text-align: start;
+        &--original{
+            margin: 5px 0px 20px 0px;
+            color: var(--color-accent);
+            font-size: 13px;
+            padding: 0px 10px;
+            text-align: start;
+        }
+    }
+    &-genres{
+        padding: 0px 10px;
+        margin-bottom: 5px;
+        color: var(--color-secondary);
+        margin-top: auto;
+    }
+    &-type{
+        padding: 0px 10px;
+        text-align: right;
+        &--watched{
+            color: var(--color-warning)
+        }
+        &--will-watch{
+            color: var(--color-accent);
+        }
+    }
+}

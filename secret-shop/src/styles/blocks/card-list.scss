@@ -1,0 +1,20 @@
+.goods-cards__list {
+    display: grid;
+    row-gap: 35px;
+    column-gap: 25px;
+    width: 100%;
+    &--4{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.cards {
+    width: 100%;
+    max-width: 1480px;
+    background-color: var(--color-dark);
+    border-radius: 15px;
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}

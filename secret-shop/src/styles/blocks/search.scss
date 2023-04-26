@@ -1,0 +1,51 @@
+.goods-cards__head-search {
+    background-color: transparent;
+    border: 1px solid var(--color-secondary);
+    border-radius: 2px;
+    color: var(--color-white);
+    padding: 0px 8px;
+    height: 40px;
+    width: 100%;
+    &-wrap{
+        padding: 20px 25px;
+        background-color: var(--color-dark);
+        border-radius: 15px;
+        width: 100%;
+    }
+}
+
+.search{
+    &-wrap{
+        padding: 20px 25px;
+        background-color: var(--color-dark);
+        border-radius: 15px;
+        width: 100%;
+    }
+    &-form{
+        display: flex;
+        gap: 10px;
+        &__input{
+            background-color: transparent;
+            border: 1px solid var(--color-secondary);
+            border-radius: 2px;
+            color: var(--color-white);
+            padding: 0px 8px;
+            height: 40px;
+            width: 100%;
+        }
+        &__btn{
+            border: 1px solid var(--color-secondary);
+            background-color: transparent;
+            color: var(--color-accent);
+            color: var(--color-secondary);
+            border-radius: 2px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: border 0.3s ease-in-out, color 0.3s ease-in-out;
+            &:hover{
+                color: var(--color-accent);
+                border: 1px solid var(--color-accent);
+            }
+        }
+    }
+}
