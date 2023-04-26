@@ -6,7 +6,7 @@ export default defineConfig({
     coverage: {
       provider: 'c8',
       all: true,
-      enabled: true, // or 'istanbul'
+      enabled: true,
       reporter: ['text'],
       include: ['**/*.{jsx,tsx}'],
     },
